@@ -71,7 +71,7 @@ export function Header() {
                     Docs
                   </Link>
                   <Link
-                    href="/docs/components/button"
+                    href="/showcase"
                     className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                   >
                     Showcases

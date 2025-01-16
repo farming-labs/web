@@ -47,7 +47,7 @@ const ShoowcaseHeroSection = () => {
     </div>
   );
   return (
-    <div className="min-h-[88vh] flex justify-start items-start mt-10">
+    <div className="min-h-full flex justify-start items-start mt-10">
       <Container>
         <div className="relative p-3 w-full flex flex-col gap-2 center">
           <CardBody />
