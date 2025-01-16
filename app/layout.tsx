@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
-import { Space_Mono, Space_Grotesk } from "next/font/google";
+import { Space_Mono, Space_Grotesk, VT323 } from "next/font/google";
 import { Footer } from "@/components/footer";
 import "@/styles/globals.css";
+import { Header } from "@/components/header";
 
 const sansFont = Space_Grotesk({
   subsets: ["latin"],
@@ -11,7 +12,12 @@ const sansFont = Space_Grotesk({
   display: "swap",
   weight: "400",
 });
-
+const vt = VT323({
+  subsets: ["latin"],
+  variable: "--font-pixel",
+  display: "swap",
+  weight: "400",
+});
 const monoFont = Space_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
@@ -20,10 +26,9 @@ const monoFont = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AriaDocs - Template",
-  metadataBase: new URL("https://ariadocs.vercel.app/"),
-  description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+  title: "Farming Labs",
+  metadataBase: new URL("https://farming-labs.vercel.app/"),
+  description: "Fixing JS problems",
 };
 
 export default function RootLayout({
@@ -34,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
+        className={`${sansFont.variable} ${monoFont.variable} ${vt.variable} font-regular antialiased tracking-wide`}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -43,7 +48,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <Header />
+          {/* <Navbar /> */}
           <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
             {children}
           </main>
