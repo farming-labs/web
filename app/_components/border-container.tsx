@@ -47,7 +47,7 @@ const HeroSection = () => {
     </div>
   );
   return (
-    <div className=" min-h-screen flex justify-center items-center">
+    <div className="min-h-[88vh] flex justify-center items-center">
       <Container>
         <div className="relative p-3 w-full flex flex-col gap-2 center">
           <CardBody />
