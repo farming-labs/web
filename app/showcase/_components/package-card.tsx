@@ -1,14 +1,20 @@
 import { cn } from "@/lib/utils";
-export const PackagegCard = () => {
+type PackageCardProps = {
+  id: string;
+  title: string;
+  description: string;
+};
+export const PackagegCard = ({
+  item: { title, description },
+}: {
+  item: PackageCardProps;
+}) => {
   const CardBody = ({ className = "p-4" }) => (
     <div className={cn("text-left mb-7 space-y-5 pt-10", className)}>
       <h2 className="font-pixel text-xl sm:text-2xl md:text-3xl uppercase">
-        Befter
+        {title}
       </h2>
-      <p className="text-gray-700 dark:text-gray-300">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, hic
-        ipsum! Qui dicta debitis aliquid quo molestias explicabo iure!
-      </p>
+      <p className="text-gray-700 dark:text-gray-300">{description}</p>
     </div>
   );
   const Icon = ({
