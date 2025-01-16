@@ -1,19 +1,22 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 type PackageCardProps = {
   id: string;
   title: string;
   description: string;
 };
 export const PackagegCard = ({
-  item: { title, description },
+  item: { id, title, description },
 }: {
   item: PackageCardProps;
 }) => {
   const CardBody = ({ className = "p-4" }) => (
     <div className={cn("text-left mb-7 space-y-5 pt-10", className)}>
-      <h2 className="font-pixel text-xl sm:text-2xl md:text-3xl uppercase">
-        {title}
-      </h2>
+      <Link href={`https://github.com/farming-labs/${id}`}>
+        <h2 className="font-pixel w-fit hover:no-underline relative ease-in after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:translate-y-[3px] after:rounded-full after:dark:bg-zinc-50 after:bg-zinc-800 after:opacity-0 after:duration-300 after:content-[''] hover:after:-translate-y-1 hover:after:opacity-100 px-[1px] pb-0 text-xl sm:text-2xl md:text-3xl uppercase">
+          {title}
+        </h2>
+      </Link>
       <p className="text-gray-700 dark:text-gray-300">{description}</p>
     </div>
   );
