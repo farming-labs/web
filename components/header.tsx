@@ -46,7 +46,7 @@ export function Header() {
                         backdrop-blur-md
                         border-x border-b
                         border-[rgba(230,230,230,0.7)] dark:border-[rgba(70,70,70,0.4)]
-                        w-full sm:min-w-[800px] sm:max-w-[1200px]
+                        w-full sm:min-w-[800px] sm:max-w-5xl
                         rounded-b-none
                         px-4 py-2.5
                         relative
