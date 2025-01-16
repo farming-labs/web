@@ -1,4 +1,4 @@
-import HeroSection from "./_components/border-container";
+import HeroSection from "./_components/bordered-hero";
 
 export default function Home() {
   return (
