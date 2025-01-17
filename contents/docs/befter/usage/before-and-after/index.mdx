@@ -92,3 +92,49 @@ callHook(hooks, "hook1");
 Main function executed
 After hook executed
 ```
+
+# Real-World Example Use Cases
+
+## Example 1: Task Completion Flow
+
+In this scenario, after performing the main task (like sending an email), you may want to perform additional cleanup operations (like logging the success or updating the database).
+
+### Code Example:
+
+```javascript
+
+import { createBefter, hook, callHook } from "../src/befter";
+
+// Create a new hook container
+const hooks = createBefter();
+
+// Create a hook labeled "userLogin" with a main function for user login
+const { beforeMeta: bf, afterMeta: af } = hook(hooks, "userLogin", () => {
+  console.log("User logged in successfully");
+});
+
+// Access the current before hooks list and the function to add a new one
+const [currBf, addBf] = bf();
+
+// Add a before hook for authentication check
+addBf(() => {
+  console.log("Checking user credentials...");
+});
+
+// Access the current after hooks list and the function to add a new one
+const [currAf, addAf] = af();
+
+// Add an after hook to send a confirmation email
+addAf(() => {
+  console.log("Sending confirmation email...");
+});
+
+// Call the hook, which will execute the before hook first, then the main function, and finally the after hook
+callHook(hooks, "userLogin");
+
+```
+```plaintext
+Checking user credentials...
+User logged in successfully
+Sending confirmation email...
+```
