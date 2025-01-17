@@ -35,6 +35,26 @@ export const ROUTES: EachRoute[] = [
           { title: "Custom", href: "/custom" },
         ],
       },
+      {
+        title: "Befter",
+        href: "/befter",
+        items: [
+          { title: "installation", href: "/installation" },
+          {
+            title: "usage",
+            href: "/usage",
+            items: [
+              { title: "Creating Hook", href: "/creating-hooks" },
+              { title: "Calling Hook", href: "/calling-hooks" },
+              { title: "Managing Hook", href: "/managing-hooks" },
+              {
+                title: "Before & After Hooks",
+                href: "/before-and-after-hooks",
+              },
+            ],
+          },
+        ],
+      },
       { title: "Themes", href: "/themes" },
       {
         title: "Customize",
