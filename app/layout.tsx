@@ -50,7 +50,7 @@ export default function RootLayout({
         >
           <Header />
           {/* <Navbar /> */}
-          <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
+          <main className="sm:container mx-auto w-[90vw] scroll-smooth">
             {children}
           </main>
           <Footer />
