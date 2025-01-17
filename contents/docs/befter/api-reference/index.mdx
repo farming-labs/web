@@ -107,15 +107,3 @@ description: Hook management solution.
   - `addAf`: A function to add new after hooks.
 
 ---
-
-## Example Usage
-
-### Creating and Calling Hooks:
-
-```javascript
-const hooks = createBefter();
-hook(hooks, "hook1", () => {
-  console.log("This is the first hook");
-});
-
-callHook(hooks, "hook1");  // Logs: "This is the first hook"
