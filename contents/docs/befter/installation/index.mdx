@@ -1,38 +1,17 @@
 ---
 title: Installation
-description: How to create custom components for Markdown.
+description: Guide to Install Befter.
 ---
+# Befter - Hook Management Library
 
-To add custom components in AriaDocs, follow these steps:
+`befter` is a lightweight library for managing hooks in JavaScript, allowing you to register, invoke, and manage hooks in a sequence. Here's how to install it and get started.
 
-1. **Create Your Component**: First, create your custom component in the `@components/markdown` folder. For example, you might create a file named `Outlet.tsx`.
+## Step 1: Install Befter via NPM
 
-2. **Import Your Component**: Next, open the `@lib/markdown.ts` file. This is where you'll register your custom component for use in Markdown.
+To install `befter`, you'll need to use [npm](https://www.npmjs.com/) (Node Package Manager), which is typically installed along with [Node.js](https://nodejs.org/). If you haven't installed Node.js and npm yet, you can do so by downloading and installing the latest version of Node.js from their official website.
 
-3. **Add Your Component to the Components Object**: In the `@lib/markdown.ts` file, import your custom component and add it to the `components` object. Here’s how to do it:
+Once Node.js and npm are installed, run the following command in your project directory:
 
-```ts
-import Outlet from "@/components/markdown/outlet";
-
-// Add custom components
-const components = {
-  Outlet,
-};
+```bash
+npm install befter
 ```
-
-4. **Using Your Custom Component in Markdown**: After registering your component, you can now use it anywhere in your Markdown content. For instance, if your `Outlet` component is designed to display additional information, you can use it as follows:
-
-### Markdown Example
-
-```markdown
-<Outlet>
-  This is some custom content rendered by the Outlet component!
-</Outlet>
-```
-
-### Rendered Output
-
-This will render the content inside the `Outlet` component, allowing you to create reusable and dynamic Markdown content.
-
-
-By following these steps, you can extend the capabilities of your Markdown documentation and create a more engaging user experience.
