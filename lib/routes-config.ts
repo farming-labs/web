@@ -47,6 +47,8 @@ export const ROUTES: EachRoute[] = [
               },
             ],
           },
+
+          { title: "API Reference", href: "/api-reference" },
         ],
       },
     ],

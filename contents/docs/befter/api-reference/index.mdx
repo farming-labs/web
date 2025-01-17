@@ -1,0 +1,121 @@
+---
+title: API Reference.
+description: Hook management solution.
+---
+# Befter API Reference
+
+## `createBefter()`
+
+- **Description**: Initializes a new instance of the Befter hooks system.
+- **Returns**: An object representing the hook manager.
+
+---
+
+## `hook(hooks, label, callback)`
+
+- **Description**: Registers a new hook under the specified label and associates a callback function with it.
+- **Parameters**:
+  - `hooks`: The hook manager object created by `createBefter()`.
+  - `label`: A string label for the hook (e.g., "hook1").
+  - `callback`: A function to be registered as a hook.
+- **Returns**: An object containing:
+  - `currHook`: The current list of hooks associated with the label.
+  - `removeHook`: A function to remove a specific hook.
+  - `beforeMeta`: Metadata related to before hooks.
+  - `afterMeta`: Metadata related to after hooks.
+
+---
+
+## `callHook(hooks, label)`
+
+- **Description**: Calls the hooks associated with the specified label in the order they were registered.
+- **Parameters**:
+  - `hooks`: The hook manager object created by `createBefter()`.
+  - `label`: A string label for the hook to be executed.
+- **Returns**: None.
+
+---
+
+## `getHook(hooks, label)`
+
+- **Description**: Retrieves the list of hooks associated with the specified label.
+- **Parameters**:
+  - `hooks`: The hook manager object created by `createBefter()`.
+  - `label`: A string label for the hook.
+- **Returns**: The list of hooks associated with the given label.
+
+---
+
+## `getHookWithIndex(hooks, label, index)`
+
+- **Description**: Retrieves the hook function associated with a specific index under the given label.
+- **Parameters**:
+  - `hooks`: The hook manager object created by `createBefter()`.
+  - `label`: A string label for the hook.
+  - `index`: The index of the hook function to retrieve.
+- **Returns**: The hook function at the specified index.
+
+---
+
+## `updateHook(hooks, label, oldHook, newCallback)`
+
+- **Description**: Updates a specific hook for a given label by replacing it with a new callback function.
+- **Parameters**:
+  - `hooks`: The hook manager object created by `createBefter()`.
+  - `label`: A string label for the hook.
+  - `oldHook`: The hook function to be replaced.
+  - `newCallback`: The new callback function to replace the old one.
+- **Returns**: None.
+
+---
+
+## `removeHook(hooks, label, hook)`
+
+- **Description**: Removes a specific hook under a given label.
+- **Parameters**:
+  - `hooks`: The hook manager object created by `createBefter()`.
+  - `label`: A string label for the hook.
+  - `hook`: The hook function to remove.
+- **Returns**: The removed hook function.
+
+---
+
+## `removeHookItSelf(hooks, label)`
+
+- **Description**: Removes the hook that calls this function from the hook manager.
+- **Parameters**:
+  - `hooks`: The hook manager object created by `createBefter()`.
+  - `label`: A string label for the hook.
+- **Returns**: An object representing the hook manager after the hook has been removed.
+
+---
+
+## Before and After Hooks
+
+### `beforeMeta`
+
+- **Description**: Metadata related to hooks that should be executed before the main hook.
+- **Returns**: A tuple containing:
+  - `currBf`: The current list of before hooks.
+  - `addBf`: A function to add new before hooks.
+
+### `afterMeta`
+
+- **Description**: Metadata related to hooks that should be executed after the main hook.
+- **Returns**: A tuple containing:
+  - `currAf`: The current list of after hooks.
+  - `addAf`: A function to add new after hooks.
+
+---
+
+## Example Usage
+
+### Creating and Calling Hooks:
+
+```javascript
+const hooks = createBefter();
+hook(hooks, "hook1", () => {
+  console.log("This is the first hook");
+});
+
+callHook(hooks, "hook1");  // Logs: "This is the first hook"
