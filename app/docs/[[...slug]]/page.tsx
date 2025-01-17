@@ -13,9 +13,7 @@ type PageProps = {
 export default async function DocsPage(props: PageProps) {
   const params = await props.params;
 
-  const {
-    slug = []
-  } = params;
+  const { slug = [] } = params;
 
   const pathName = slug.join("/");
   const res = await getDocsForSlug(pathName);
@@ -30,7 +28,7 @@ export default async function DocsPage(props: PageProps) {
           <p className="-mt-4 text-muted-foreground text-[16.5px]">
             {res.frontmatter.description}
           </p>
-          <div>{res.content}</div>
+          <div className="">{res.content}</div>
           <Pagination pathname={pathName} />
         </Typography>
       </div>
@@ -42,9 +40,7 @@ export default async function DocsPage(props: PageProps) {
 export async function generateMetadata(props: PageProps) {
   const params = await props.params;
 
-  const {
-    slug = []
-  } = params;
+  const { slug = [] } = params;
 
   const pathName = slug.join("/");
   const res = await getDocsForSlug(pathName);
