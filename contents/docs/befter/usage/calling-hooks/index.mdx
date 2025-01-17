@@ -1,0 +1,36 @@
+---
+title: Calling Hooks.
+description: Hook management solution.
+---
+
+
+### `callHook(hooks, label)`
+
+#### Definition
+
+The `callHook` function triggers all the hooks associated with a specific label.
+
+#### Usage
+
+```javascript
+callHook(hooks, 'hook1');
+```
+
+- **Arguments**:
+  - `hooks` (Object): The hook manager object.
+  - `label` (String): The label of the hook to be called.
+
+- **Returns**: None.
+
+#### Real-World Example
+
+After adding the `formSubmit` hook, you can call it like this:
+
+```javascript
+// Call the formSubmit hook
+callHook(hooks, 'formSubmit');
+```
+
+This will log `"Form submitted!"` in the console.
+
+---

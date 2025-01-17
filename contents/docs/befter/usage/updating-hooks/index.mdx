@@ -1,0 +1,46 @@
+---
+title: Updating Hooks.
+description: Hook management solution.
+---
+
+### `updateHook(hooks, label, hookFunction, newFn)`
+
+#### Definition
+
+The `updateHook` function is used to replace an existing hook function associated with a label. You can update the function at a specific index in the list.
+
+#### Usage
+
+```javascript
+updateHook(hooks, 'hook1', currHook['hook1'][0], () => console.log('Updated hook'));
+```
+
+- **Arguments**:
+  - `hooks` (Object): The hook manager object.
+  - `label` (String): The label of the hook to be updated.
+  - `hookFunction` (Function): The existing hook function to be replaced.
+  - `newFn` (Function): The new function to replace the old one.
+
+- **Returns**: None.
+
+#### Real-World Example
+
+In the case of a login process, you might want to update the `login` hook when the logic changes:
+
+```javascript
+const hooks = createBefter();
+
+// Add initial login hook
+let { currHook } = hook(hooks, 'login', () => console.log('Logging in...'));
+
+// Call the initial hook
+callHook(hooks, 'login');
+
+// Update the login hook with new functionality
+updateHook(hooks, 'login', currHook['login'][0], () => console.log('Logging in with new logic...'));
+
+// Call the updated hook
+callHook(hooks, 'login');
+```
+
+---

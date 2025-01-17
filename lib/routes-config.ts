@@ -46,7 +46,9 @@ export const ROUTES: EachRoute[] = [
             items: [
               { title: "Creating Hook", href: "/creating-hooks" },
               { title: "Calling Hook", href: "/calling-hooks" },
-              { title: "Managing Hook", href: "/managing-hooks" },
+              { title: "Getting Hook", href: "/getting-hooks" },
+              { title: "Removing Hook", href: "/removing-hooks" },
+              { title: "Updating Hook", href: "/updating-hooks" },
               {
                 title: "Before & After Hooks",
                 href: "/before-and-after-hooks",

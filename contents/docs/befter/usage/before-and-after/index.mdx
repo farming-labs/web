@@ -1,0 +1,94 @@
+---
+title: Before And After Hooks.
+description: Hook management solution.
+---
+
+
+
+# How to Use Before and After Hooks in Befter
+
+In the `befter` module, you can register `before` and `after` hooks that will run before and after the main hook function, respectively. Here's how to use them effectively.
+
+## 1. Setting Up Before Hooks
+
+### Steps to use `before` hooks:
+- **Create a hook** with a label using the `hook()` function.
+- **Access the `beforeMeta()`** method, which returns two things:
+  1. The current list of before hooks.
+  2. A function to add new before hooks.
+
+- **Add a before hook** using the provided function from `beforeMeta()`.
+
+### Example:
+
+```javascript
+import { createBefter, hook, callHook } from "../src/befter";
+
+// Create a new hook container
+const hooks = createBefter();
+
+// Create a hook labeled "hook1" with a main function
+const { beforeMeta: bf } = hook(hooks, "hook1", () => {
+  console.log("Main function executed");
+});
+
+// Access the current before hooks list and the function to add a new one
+const [currBf, addBf] = bf();
+
+// Add a before hook
+addBf(() => {
+  console.log("Before hook executed");
+});
+
+// Call the hook, which will execute the before hook first, then the main function
+callHook(hooks, "hook1");
+```
+
+## Expected Output
+
+```plaintext
+Before hook executed
+Main function executed
+```
+
+
+## 1. Setting Up After Hooks
+
+### Steps to use `after` hooks:
+- **Create a hook** with a label using the `hook()` function.
+- **Access the `afterMeta()`** method, which returns two things:
+  1. The current list of after hooks.
+  2. A function to add new after hooks.
+
+- **Add a after hook** using the provided function from `afterMeta()`.
+
+### Example:
+
+```javascript
+import { createBefter, hook, callHook } from "../src/befter";
+
+// Create a new hook container
+const hooks = createBefter();
+
+// Create a hook labeled "hook1" with a main function
+const { afterMeta: af } = hook(hooks, "hook1", () => {
+  console.log("Main function executed");
+});
+
+// Access the current after hooks list and the function to add a new one
+const [currAf, addAf] = af();
+
+// Add an after hook
+addAf(() => {
+  console.log("After hook executed");
+});
+
+// Call the hook, which will execute the main function first, then the after hook
+callHook(hooks, "hook1");
+```
+
+
+```plaintext
+Main function executed
+After hook executed
+```

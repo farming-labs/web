@@ -1,0 +1,74 @@
+---
+title: Removing Hooks.
+description: Hook management solution.
+---
+
+### `getHook(hooks, label)`
+
+#### Definition
+
+The `getHook` function retrieves the list of functions associated with a specific label.
+
+#### Usage
+
+```javascript
+const hookList = getHook(hooks, 'hook1');
+```
+
+- **Arguments**:
+  - `hooks` (Object): The hook manager object.
+  - `label` (String): The label of the hook to retrieve.
+
+- **Returns**: An array of functions associated with the given label.
+
+#### Real-World Example
+
+You can use this function to get all hooks and perform some operations:
+
+```javascript
+const hooks = createBefter();
+
+// Add some hooks
+hook(hooks, 'beforeSave', () => console.log('Before saving'));
+hook(hooks, 'afterSave', () => console.log('After saving'));
+
+// Retrieve and call all hooks for 'beforeSave'
+const beforeSaveHooks = getHook(hooks, 'beforeSave');
+beforeSaveHooks.forEach(fn => fn());
+```
+
+---
+
+### 8. `getHookWithIndex(hooks, label, index)`
+
+#### Definition
+
+The `getHookWithIndex` function retrieves a hook function from the list based on its index.
+
+#### Usage
+
+```javascript
+const hookFunction = getHookWithIndex(hooks, 'hook1', 0);
+```
+
+- **Arguments**:
+  - `hooks` (Object): The hook manager object.
+  - `label` (String): The label of the hook to retrieve.
+  - `index` (Number): The index of the hook function to retrieve.
+
+- **Returns**: The hook function at the specified index.
+
+#### Real-World Example
+
+You can retrieve a specific hook to update or replace it:
+
+```javascript
+// Add hooks for form validation
+const { currHook } = hook(hooks, 'formValidate', () => console.log('Validating form'));
+
+// Get the hook at index 0
+const firstHook = getHookWithIndex(hooks, 'formValidate', 0);
+console.log(firstHook);  // Function: () => console.log('Validating form')
+```
+
+---
