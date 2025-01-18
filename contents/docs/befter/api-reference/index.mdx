@@ -4,14 +4,18 @@ description: Hook management solution.
 ---
 # Befter API Reference
 
-## `createBefter()`
+## Create Befter
+
+`createBefter()`
 
 - **Description**: Initializes a new instance of the Befter hooks system.
 - **Returns**: An object representing the hook manager.
 
 ---
 
-## `hook(hooks, label, callback)`
+## Register hook
+
+`hook(hooks, label, callback)`
 
 - **Description**: Registers a new hook under the specified label and associates a callback function with it.
 - **Parameters**:
@@ -26,7 +30,9 @@ description: Hook management solution.
 
 ---
 
-## `callHook(hooks, label)`
+## Call hook
+
+`callHook(hooks, label)`
 
 - **Description**: Calls the hooks associated with the specified label in the order they were registered.
 - **Parameters**:
@@ -36,7 +42,9 @@ description: Hook management solution.
 
 ---
 
-## `getHook(hooks, label)`
+## Get hook
+
+`getHook(hooks, label)`
 
 - **Description**: Retrieves the list of hooks associated with the specified label.
 - **Parameters**:
@@ -46,7 +54,9 @@ description: Hook management solution.
 
 ---
 
-## `getHookWithIndex(hooks, label, index)`
+## Get hook with Index
+
+`getHookWithIndex(hooks, label, index)`
 
 - **Description**: Retrieves the hook function associated with a specific index under the given label.
 - **Parameters**:
@@ -57,7 +67,9 @@ description: Hook management solution.
 
 ---
 
-## `updateHook(hooks, label, oldHook, newCallback)`
+##  Update hook
+
+`updateHook(hooks, label, oldHook, newCallback)`
 
 - **Description**: Updates a specific hook for a given label by replacing it with a new callback function.
 - **Parameters**:
@@ -69,7 +81,9 @@ description: Hook management solution.
 
 ---
 
-## `removeHook(hooks, label, hook)`
+## Remove hook
+
+`removeHook(hooks, label, hook)`
 
 - **Description**: Removes a specific hook under a given label.
 - **Parameters**:
@@ -80,7 +94,9 @@ description: Hook management solution.
 
 ---
 
-## `removeHookItSelf(hooks, label)`
+## Remove hook itself
+
+`removeHookItSelf(hooks, label)`
 
 - **Description**: Removes the hook that calls this function from the hook manager.
 - **Parameters**:
@@ -92,14 +108,19 @@ description: Hook management solution.
 
 ## Before and After Hooks
 
-### `beforeMeta`
+### Before Meta
+
+`beforeMeta`
 
 - **Description**: Metadata related to hooks that should be executed before the main hook.
 - **Returns**: A tuple containing:
   - `currBf`: The current list of before hooks.
   - `addBf`: A function to add new before hooks.
 
-### `afterMeta`
+
+### After Meta
+
+`afterMeta`
 
 - **Description**: Metadata related to hooks that should be executed after the main hook.
 - **Returns**: A tuple containing:
