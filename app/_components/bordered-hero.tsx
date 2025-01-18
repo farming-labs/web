@@ -6,10 +6,11 @@ import { FlickeringGrid } from "@/components/flickering-partilce";
 import { StarBorder } from "@/components/two-border-btn";
 import { CommandIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const cardContent = {
   title: "Lorem ipsum dolor",
   description:
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, hic ipsum! Qui dicta debitis aliquid quo molestias explicabo iure!",
+    "Focuses on fixing JavaScript functionality, with a series of npm packages and APIs designed to make your development process smoother and more efficient.",
 };
 const CardBody = ({ className = "p-4" }) => (
   <div className={cn("text-center mb-7 space-y-5 pt-10", className)}>
@@ -73,11 +74,15 @@ const HeroSection = () => {
             />
           </div>
           <div className="flex relative z-20 justify-center items-center gap-2">
-            <StarBorder>
-              <CommandIcon className="w-4 h-4 mr-1.5" />
-              Go to Docs
-            </StarBorder>
-            <Button variant={"link"}>Showcase</Button>
+            <Link href="/docs">
+              <StarBorder>
+                <CommandIcon className="w-4 h-4 mr-1.5" />
+                Go to Docs
+              </StarBorder>
+            </Link>
+            <Link href={"/showcase"}>
+              <Button variant={"link"}>Showcase</Button>
+            </Link>
           </div>
         </div>
       </Container>
