@@ -6,6 +6,7 @@ import { FlickeringGrid } from "@/components/flickering-partilce";
 import { StarBorder } from "@/components/two-border-btn";
 import { CommandIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const cardContent = {
   title: "Lorem ipsum dolor",
   description:
@@ -73,11 +74,15 @@ const ShoowcaseHeroSection = () => {
             />
           </div>
           <div className="p-3 flex relative z-20 justify-start items-center gap-2">
-            <StarBorder>
-              <CommandIcon className="w-4 h-4 mr-1.5" />
-              Go to Docs
-            </StarBorder>
-            <Button variant={"link"}>Showcase</Button>
+            <Link href="/docs">
+              <StarBorder>
+                <CommandIcon className="w-4 h-4 mr-1.5" />
+                Go to Docs
+              </StarBorder>
+            </Link>
+            <Link href={"/showcase"}>
+              <Button variant={"link"}>Showcase</Button>
+            </Link>
           </div>
         </div>
       </Container>
