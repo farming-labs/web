@@ -11,24 +11,6 @@ export function Header() {
   return (
     <>
       <div className="sticky top-0 left-0 right-0 z-50 bg-white dark:bg-black/5">
-        <div className="sm:hidden w-full p-2.5">
-          <Link
-            href="https://farming-labs.vercel.app"
-            target="_blank"
-            className="flex items-center justify-center gap-2"
-          >
-            <div className="group relative inline-flex items-center gap-2 px-3 py-1 text-sm rounded-lg bg-zinc-900 dark:bg-zinc-100 transition-colors">
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-40 group-hover:opacity-80 blur transition-opacity duration-500" />
-              <div className="relative">
-                <span className="text-white dark:text-zinc-900">
-                  farming labs.
-                </span>
-              </div>
-              <ArrowUpRight className="relative w-3.5 h-3.5 text-white/90 dark:text-zinc-900/90" />
-            </div>
-          </Link>
-        </div>
-
         <div className="flex items-center justify-center w-full flex-col">
           <div
             className={`
