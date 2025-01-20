@@ -50,7 +50,7 @@ export const PackagegCard = ({
     );
   };
   return (
-    <div className="border-2 border-zinc-100 dark:border-zinc-700 relative rounded-sm">
+    <div className="border-2 border-zinc-100 dark:border-zinc-700 relative w-full md:-w-fit rounded-sm">
       <Icon className="-top-0.5 -left-0.5 border-l-2 border-t-2 rounded-tl-sm" />
       <Icon className="-top-0.5 -right-0.5 border-r-2 border-t-2 rounded-tr-sm" />
       <Icon className="-bottom-0.5 -left-0.5 border-l-2 border-b-2 rounded-bl-sm" />
