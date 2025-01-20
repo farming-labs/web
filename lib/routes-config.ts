@@ -31,9 +31,9 @@ export const ROUTES: EachRoute[] = [
         title: "Befter",
         href: "/befter",
         items: [
-          { title: "installation", href: "/installation" },
+          { title: "Installation", href: "/installation" },
           {
-            title: "usage",
+            title: "Usage",
             href: "/usage",
             items: [
               { title: "Creating Hook", href: "/creating-hooks" },
