@@ -120,7 +120,7 @@ export function Header() {
           </nav>
           <div className="mt-auto flex items-center gap-4">
             <Link
-              href="https://github.com/nisabmohd/NexDocs"
+              href="https://github.com/farming-labs/befter"
               className={buttonVariants({
                 variant: "ghost",
                 size: "icon",
@@ -129,7 +129,7 @@ export function Header() {
               <GithubIcon className="h-[1.1rem] w-[1.1rem]" />
             </Link>
             <Link
-              href="#"
+              href="https://x.com/KinfishT"
               className={buttonVariants({
                 variant: "ghost",
                 size: "icon",
