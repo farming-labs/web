@@ -74,7 +74,7 @@ const HeroSection = () => {
             />
           </div>
           <div className="flex relative z-20 justify-center items-center gap-2">
-            <Link href="/docs">
+            <Link href="/docs/intoduction">
               <StarBorder>
                 <CommandIcon className="w-4 h-4 mr-1.5" />
                 Go to Docs
