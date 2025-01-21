@@ -7,13 +7,26 @@ import { buttonVariants } from "./ui/button";
 import { ModeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 import Search from "./search";
+const Icon = ({ className, ...rest }: React.HTMLAttributes<HTMLDivElement>) => {
+  return (
+    <div
+      {...rest}
+      className={cn(
+        "dark:border-zinc-200/40 border-zinc-700/40 size-6 absolute",
+        className,
+      )}
+    />
+  );
+};
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-white dark:bg-black/5">
-      <div className="flex items-center justify-center w-full">
+      <div className=" flex items-center justify-center w-full">
         <div className="flex items-center justify-between w-full sm:min-w-[800px] sm:max-w-5xl px-4 py-2.5 bg-gradient-to-b from-white/90 via-gray-50/90 to-white/90 dark:from-zinc-900/20 dark:via-zinc-800/50 dark:to-zinc-900/90 shadow-[0_2px_20px_-2px_rgba(0,0,0,0.1)] backdrop-blur-md border-x border-b border-[rgba(230,230,230,0.7)] dark:border-[rgba(70,70,70,0.4)] rounded-b-none relative transition-all duration-300 ease-in-out">
+          <Icon className="-bottom-0.5 -left-0.5 border-l-2 border-b-2 rounded-bl-sm" />
+          <Icon className="-bottom-0.5 -right-0.5 border-r-2 border-b-2 rounded-br-sm" />
           <div className="relative z-10 flex items-center justify-between w-full gap-2">
             {/* Logo Section */}
             <div className="flex items-center gap-3">
