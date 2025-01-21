@@ -12,13 +12,30 @@ import { FooterButtons } from "./footer";
 import { DialogTitle } from "./ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import DocsMenu from "./docs-menu";
-
+import { cn } from "@/lib/utils";
+const Icon = ({ className, ...rest }: React.HTMLAttributes<HTMLDivElement>) => {
+  return (
+    <div
+      {...rest}
+      className={cn(
+        "dark:border-zinc-200/40 border-zinc-700/80 size-6 absolute",
+        className,
+      )}
+    />
+  );
+};
 export function Leftbar() {
   return (
-    <aside className="md:flex hidden flex-[1.5] min-w-[238px] sticky top-16 flex-col h-[93.75vh] overflow-y-auto">
-      <ScrollArea className="py-4">
-        <DocsMenu />
-      </ScrollArea>
+    <aside className="md:flex bg-gradient-to-tr from-background via-backgroud/80 to-zinc-800/40 mt-5 sticky top-16 h-[80vh] hidden flex-[1.5] flex-col  overflow-y-auto">
+      <div className="px-4 py-4 border-2 border-zinc-100 dark:border-zinc-700/20 relative min-w-[238px]  h-full rounded-sm">
+        <Icon className="-top-0.5 -left-0.5 border-l-2 border-t-2 rounded-tl-sm" />
+        <Icon className="-top-0.5 -right-0.5 border-r-2 border-t-2 rounded-tr-sm" />
+        <Icon className="-bottom-0.5 -left-0.5 border-l-2 border-b-2 rounded-bl-sm" />
+        <Icon className="-bottom-0.5 -right-0.5 border-r-2 border-b-2 rounded-br-sm" />
+        <ScrollArea className="py-4">
+          <DocsMenu />
+        </ScrollArea>
+      </div>
     </aside>
   );
 }
