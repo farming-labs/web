@@ -1,5 +1,4 @@
 "use client";
-
 import { CommandIcon, FileIcon, SearchIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
@@ -75,7 +74,7 @@ export default function Search() {
               />
             </DialogHeader>
             {filteredResults.length == 0 && searchedInput && (
-              <p className="text-muted-foreground mx-auto mt-2 text-sm">
+              <p className="text-muted-foreground mx-auto mt-2 px-2 text-sm">
                 No results found for{" "}
                 <span className="text-primary">{`"${searchedInput}"`}</span>
               </p>
