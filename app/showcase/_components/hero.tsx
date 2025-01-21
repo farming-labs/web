@@ -80,9 +80,6 @@ const ShoowcaseHeroSection = () => {
                 Go to Docs
               </StarBorder>
             </Link>
-            <Link href={"/showcase"}>
-              <Button variant={"link"}>Showcase</Button>
-            </Link>
           </div>
         </div>
       </Container>
