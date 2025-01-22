@@ -8,7 +8,7 @@ const Icon = ({ className, ...rest }: React.HTMLAttributes<HTMLDivElement>) => {
     <div
       {...rest}
       className={cn(
-        "dark:border-zinc-200/40 border-zinc-700/80 size-6 absolute",
+        "dark:border-zinc-200/40 border-zinc-700/80 size-4 absolute",
         className,
       )}
     />
@@ -21,9 +21,9 @@ export default function Pagination({ pathname }: { pathname: string }) {
     <div className="grid mb-10 grid-cols-2 flex-grow sm:py-10 py-7 gap-3">
       <div>
         {res.prev && (
-          <div className="px-4 hover:dark:bg-zinc-950 py-3 w-full  flex flex-col  border-2 border-zinc-100 dark:border-zinc-700/20 relative rounded-sm">
+          <div className="px-4 hover:dark:bg-zinc-900 py-3 w-full  flex flex-col  border-2 border-zinc-100 dark:border-zinc-700/20 relative rounded-sm">
             <Link
-              className="no-underline border-none px-4  w-full hover:bg-transparent flex flex-col !items-start"
+              className="no-underline border-none px-4 w-full hover:bg-transparent flex flex-col !items-start"
               href={`/docs${res.prev.href}`}
             >
               <Icon className="-top-0.5 -left-0.5 border-l-2 border-t-2 rounded-tl-sm" />
@@ -42,7 +42,7 @@ export default function Pagination({ pathname }: { pathname: string }) {
       </div>
       <div>
         {res.next && (
-          <div className="px-4 hover:dark:bg-zinc-950 py-3 w-full  flex flex-col  border-2 border-zinc-100 dark:border-zinc-700/20 relative rounded-sm">
+          <div className="px-4 hover:dark:bg-zinc-900 py-3 w-full  flex flex-col  border-2 border-zinc-100 dark:border-zinc-700/20 relative rounded-sm">
             <Link
               className="no-underline border-none px-4  w-full hover:bg-transparent flex flex-col !items-start"
               href={`/docs${res.next.href}`}
