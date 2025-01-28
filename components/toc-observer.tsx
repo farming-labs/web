@@ -4,7 +4,7 @@ import { getDocsTocs } from "@/lib/markdown";
 import clsx from "clsx";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-
+import { motion } from "framer-motion";
 type Props = { data: Awaited<ReturnType<typeof getDocsTocs>> };
 
 export default function TocObserver({ data }: Props) {
@@ -26,7 +26,7 @@ export default function TocObserver({ data }: Props) {
     });
 
     const elements = data.map((item) =>
-      document.getElementById(item.href.slice(1))
+      document.getElementById(item.href.slice(1)),
     );
 
     elements.forEach((el) => {
@@ -47,7 +47,7 @@ export default function TocObserver({ data }: Props) {
   }, [data]);
 
   return (
-    <div className="flex flex-col gap-2.5 text-sm dark:text-stone-300/85 text-stone-800 ml-0.5">
+    <div className="flex pl-4 relative flex-col gap-2.5 text-sm dark:text-stone-300/85 text-stone-800 ml-0.5">
       {data.map(({ href, level, text }, index) => {
         return (
           <Link
@@ -57,10 +57,15 @@ export default function TocObserver({ data }: Props) {
               "pl-0": level == 2,
               "pl-4": level == 3,
               "pl-8 ": level == 4,
-              "dark:font-medium font-semibold text-primary":
+              "dark:font-medium z-[999] relative font-semibold text-primary":
                 activeId == href.slice(1),
             })}
           >
+            {activeId === href.slice(1) ? (
+              <motion.span className="absolute z-[999] top-0 -left-2 h-[15px] mt-1 w-[2px] rounded-xl bg-primary"></motion.span>
+            ) : (
+              <div className=""></div>
+            )}
             {text}
           </Link>
         );
