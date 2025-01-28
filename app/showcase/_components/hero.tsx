@@ -74,7 +74,7 @@ const ShoowcaseHeroSection = () => {
             />
           </div>
           <div className="p-3 flex relative z-20 justify-start items-center gap-2">
-            <Link href="/docs">
+            <Link href="/docs/introduction">
               <StarBorder>
                 <CommandIcon className="w-4 h-4 mr-1.5" />
                 Go to Docs
