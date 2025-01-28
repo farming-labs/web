@@ -69,7 +69,7 @@ export default function TocObserver({ data }: Props) {
                     level === 2 && "-left-2",
                     level === 3 && "left-2",
                     level === 4 && "left-6",
-                    "absolute top-0  h-[15px] mt-1 w-[2px] rounded-xl bg-primary",
+                    "absolute top-0  h-[15px] mt-1 w-[1px] rounded-xl bg-primary",
                   )}
                 ></motion.span>
               </AnimatePresence>
