@@ -4,7 +4,8 @@ import { getDocsTocs } from "@/lib/markdown";
 import clsx from "clsx";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
+import { cn } from "@/lib/utils";
 type Props = { data: Awaited<ReturnType<typeof getDocsTocs>> };
 
 export default function TocObserver({ data }: Props) {
@@ -57,12 +58,21 @@ export default function TocObserver({ data }: Props) {
               "pl-0": level == 2,
               "pl-4": level == 3,
               "pl-8 ": level == 4,
-              "dark:font-medium z-[999] relative font-semibold text-primary":
+              "dark:font-medium relative font-semibold text-primary":
                 activeId == href.slice(1),
             })}
           >
             {activeId === href.slice(1) ? (
-              <motion.span className="absolute z-[999] top-0 -left-2 h-[15px] mt-1 w-[2px] rounded-xl bg-primary"></motion.span>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  className={cn(
+                    level === 2 && "-left-2",
+                    level === 3 && "left-2",
+                    level === 4 && "left-6",
+                    "absolute top-0  h-[15px] mt-1 w-[2px] rounded-xl bg-primary",
+                  )}
+                ></motion.span>
+              </AnimatePresence>
             ) : (
               <div className=""></div>
             )}
