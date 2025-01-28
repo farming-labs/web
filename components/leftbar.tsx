@@ -18,7 +18,7 @@ const Icon = ({ className, ...rest }: React.HTMLAttributes<HTMLDivElement>) => {
     <div
       {...rest}
       className={cn(
-        "dark:border-zinc-200/40 border-zinc-700/80 size-6 absolute",
+        "dark:border-zinc-200/20 border-zinc-700/80 size-6 absolute",
         className,
       )}
     />
