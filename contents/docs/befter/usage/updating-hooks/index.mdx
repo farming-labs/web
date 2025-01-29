@@ -28,6 +28,7 @@ updateHook(hooks, 'hook1', currHook['hook1'][0], () => console.log('Updated hook
 In the case of a login process, you might want to update the `login` hook when the logic changes:
 
 ```javascript
+import { createBefter, hook, callHook } from "@farming-labs/befter";
 const hooks = createBefter();
 
 // Add initial login hook

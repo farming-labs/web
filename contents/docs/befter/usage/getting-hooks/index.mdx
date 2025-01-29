@@ -14,6 +14,7 @@ The `getHook` function retrieves the list of functions associated with a specifi
 #### Usage
 
 ```javascript
+
 const hookList = getHook(hooks, 'hook1');
 ```
 
@@ -28,6 +29,7 @@ const hookList = getHook(hooks, 'hook1');
 You can use this function to get all hooks and perform some operations:
 
 ```javascript
+import { createBefter, hook, getHook } from "@farming-labs/befter";
 const hooks = createBefter();
 
 // Add some hooks
