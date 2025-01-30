@@ -179,6 +179,9 @@ addAf2(() => {
 
 // Call hook with serial execution
 await callHook(hooks, "hook1", { runner: "serial" });
+//alterntively , you can do this - since it is defaulted to serial
+await callHook(hooks, "hook1");
+
 
 // Call hook with parallel execution
 await callHook(hooks, "hook2", { runner: "parallel" });
