@@ -139,3 +139,46 @@ User logged in successfully
 Sending confirmation email...
 ```
 These real-world examples show how before and after hooks in Befter can be used to manage logic flow around a central action (e.g., sending emails, processing data, logging in users). By adding custom functionality before or after the main function, you can create more modular, maintainable, and flexible applications.
+
+
+## 3. Controlling Hook Execution: Serial vs Parallel
+
+You can control the execution of hooks by configuring them to run **serially** (one after another) or **in parallel** (concurrently). This is done by setting the `runner` option when calling the hook.
+
+### Serial Execution
+In **serial** execution, hooks are executed one after another in sequence.
+
+### Parallel Execution
+In **parallel** execution, hooks are executed concurrently, improving performance when tasks can be done independently.
+
+### Example: Serial vs Parallel Execution
+
+```javascript
+import { createBefter, hook, callHook } from "@farming-labs/befter";
+
+// Create a new hook container
+const hooks = createBefter();
+
+// Hook 1 with serial after execution
+const { beforeMeta: bf1, afterMeta: af1 } = hook(hooks, "hook1", () => {
+  console.log("This is hook1");
+});
+const [currAf1, addAf1] = af1();
+addAf1(() => {
+  console.log("This is after hook1");
+});
+
+// Hook 2 with parallel after execution
+const { beforeMeta: bf2, afterMeta: af2 } = hook(hooks, "hook2", () => {
+  console.log("This is hook2");
+});
+const [currAf2, addAf2] = af2();
+addAf2(() => {
+  console.log("This is after hook2");
+});
+
+// Call hook with serial execution
+await callHook(hooks, "hook1", { runner: "serial" });
+
+// Call hook with parallel execution
+await callHook(hooks, "hook2", { runner: "parallel" });
