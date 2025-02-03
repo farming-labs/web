@@ -159,8 +159,7 @@ export function BackgroundCircles({
         >
           {description}
         </motion.p>
-
-        <Link href="/docs/introduction">
+        <Link href="https://github.com/farming-labs">
           <StarBorder>
             <IconGithub className="w-5 h-5 mr-3" />
             Get Github
