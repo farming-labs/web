@@ -82,7 +82,7 @@ const AnimatedGrid = () => (
 
 export function BackgroundCircles({
   title = "Farming-Labs Community",
-  description = "a community for fixing JS/TS ecosystem",
+  description = "a community for fixing JS/TS ecosystem.",
   className,
   variant = "octonary",
 }: BackgroundCirclesProps) {
@@ -162,7 +162,7 @@ export function BackgroundCircles({
         <Link href="https://github.com/farming-labs">
           <StarBorder>
             <IconGithub className="w-5 h-5 mr-3" />
-            Get Github
+            Github
           </StarBorder>
         </Link>
       </motion.div>
