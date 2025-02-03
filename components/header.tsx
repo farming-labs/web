@@ -33,7 +33,11 @@ export function Header() {
               <Link href="/" className="flex items-center gap-2">
                 <span className="font-semibold">Farming Labs</span>
               </Link>
-              <span className="ml-2 text-zinc-300 dark:text-zinc-700">|</span>
+              <span className="mx-2 text-zinc-300 dark:text-zinc-700">|</span>
+              <Link href="/community" className="flex items-center gap-2">
+                <span className="font-semibold">Community</span>
+              </Link>
+
             </div>{" "}
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6">
