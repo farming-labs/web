@@ -152,7 +152,7 @@ export function BackgroundCircles({
         </h2>
 
         <motion.p
-          className="mt-6 text-lg md:text-xl dark:text-white text-slate-950"
+          className="mt-6 mb-10 text-lg md:text-xl dark:text-white text-slate-950"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -162,8 +162,8 @@ export function BackgroundCircles({
 
         <Link href="/docs/introduction">
           <StarBorder>
-            <IconGithub className="w-4 h-4 mr-2" />
-            Go to Docs
+            <IconGithub className="w-5 h-5 mr-3" />
+            Get Github
           </StarBorder>
         </Link>
       </motion.div>
@@ -173,26 +173,5 @@ export function BackgroundCircles({
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#2DD4BF/15%,transparent)] blur-[80px]" />
       </div>
     </div>
-  );
-}
-
-export function DemoCircles() {
-  const [currentVariant, setCurrentVariant] =
-    useState<keyof typeof COLOR_VARIANTS>("octonary");
-
-  const variants = Object.keys(
-    COLOR_VARIANTS,
-  ) as (keyof typeof COLOR_VARIANTS)[];
-
-  function getNextVariant() {
-    const currentIndex = variants.indexOf(currentVariant);
-    const nextVariant = variants[(currentIndex + 1) % variants.length];
-    return nextVariant;
-  }
-
-  return (
-    <>
-      <BackgroundCircles variant={currentVariant} />
-    </>
   );
 }
