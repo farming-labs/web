@@ -34,7 +34,7 @@ export function Header() {
                 <span className="font-semibold">Farming Labs</span>
               </Link>
               <span className="mx-2 text-zinc-300 dark:text-zinc-700">|</span>
-              <Link href="/community" className="flex items-center gap-2">
+              <Link href="/farmers" className="flex items-center gap-2">
                 <span className="font-semibold">Community</span>
               </Link>
 
