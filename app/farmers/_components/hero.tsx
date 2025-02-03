@@ -18,9 +18,9 @@ export function HeroSection() {
   }
 
   return (
-    <>
+    <div className="min-h-[90vh] overflow-hidden">
       <BackgroundCircles variant={currentVariant} />
-    </>
+    </div>
   );
 }
 
