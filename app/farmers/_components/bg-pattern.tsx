@@ -41,10 +41,10 @@ const COLOR_VARIANTS = {
   quaternary: {
     border: [
       "border-purple-500/60",
-      "border-pink-400/50",
+      "border-purple-700/40",
       "border-slate-600/30",
     ],
-    gradient: "from-purple-500/30",
+    gradient: "from-black/40",
   },
   quinary: {
     border: ["border-red-500/60", "border-rose-400/50", "border-slate-600/30"],
@@ -148,7 +148,7 @@ export function BackgroundCircles({
             "drop-shadow-[0_0_32px_rgba(94,234,212,0.4)]",
           )}
         >
-          {title}
+          Farming-Labs Community
         </h2>
 
         <motion.p
