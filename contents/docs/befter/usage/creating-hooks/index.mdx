@@ -56,7 +56,7 @@ const { currHook, removeHook } = hook(hooks, 'hook1', () => console.log('This is
   - `hooks` (Object): The hook manager object.
   - `label` (String): A label to associate with the hook.
   - `fn` (Function): The function to be executed when the hook is called.
-
+      - This could also be an array of `fn` (Function) to be excuted serially by default but could be parallel based on your config. See here
 - **Returns**: An object containing:
   - `currHook`: The current list of functions for the specified label.
   - `removeHook`: A function used to remove a specific hook.
