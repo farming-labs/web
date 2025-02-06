@@ -129,18 +129,13 @@ description: Hook management solution.
 
 
 
-#### Runner
+### Runner
 
-```javascript
-await callHook(hooks, 'hook1');
-await callHook(hooks, 'hook2', { runner: 'parallel' });
-```
+`runner`
 
-- **Arguments**:
-  - `hooks` (Object): The hook manager object containing all registered hooks.
-  - `label` (String): The label of the hook to be called.
-  - `options` (Object, Optional): Configuration for hook execution. Supported options:
-    - `runner` (String): Execution mode, either `'serial'` (default) or `'parallel'`.
+- **Description**: Configuration for the execution mode of hooks. It determines whether hooks are executed sequentially (`'serial'`) or concurrently (`'parallel'`).
+- **Returns**: A tuple containing:
+  - `currRunner`: The current execution mode (`'serial'` or `'parallel'`).
+  - `setRunner`: A function to update the execution mode.
 
-- **Returns**: None.
 ---
