@@ -45,6 +45,8 @@ export const ROUTES: EachRoute[] = [
                 title: "Before & After Hooks",
                 href: "/before-and-after-hooks",
               },
+
+              { title: "Execution Type", href: "/execution-type" },
             ],
           },
 
