@@ -35,7 +35,7 @@ export function Header() {
               </Link>
               <span className="mx-2 text-zinc-300 dark:text-zinc-700">|</span>
               <Link href="/farmers" className="flex items-center gap-2">
-                <span className="font-semibold">Community</span>
+                <span className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100">Community</span>
               </Link>
 
             </div>{" "}

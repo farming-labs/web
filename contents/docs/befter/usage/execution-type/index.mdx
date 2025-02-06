@@ -1,0 +1,91 @@
+---
+title: Execution Type
+description: Hook management solution.
+---
+
+### `callHook(hooks, label, options)`
+
+#### Definition
+
+The `callHook` function triggers all the hooks associated with a specific label. It supports both serial and parallel execution modes, allowing for flexible hook management.
+
+#### Usage
+
+```javascript
+await callHook(hooks, 'hook1');
+await callHook(hooks, 'hook2', { runner: 'parallel' });
+```
+
+- **Arguments**:
+  - `hooks` (Object): The hook manager object containing all registered hooks.
+  - `label` (String): The label of the hook to be called.
+  - `options` (Object, Optional): Configuration for hook execution. Supported options:
+    - `runner` (String): Execution mode, either `'serial'` (default) or `'parallel'`.
+
+- **Returns**: None.
+
+#### Real-World Example
+
+After adding hooks like `hook1` and `hook2`, you can call them as follows:
+
+```javascript
+// Call hook1 in serial mode
+await callHook(hooks, 'hook1');
+
+// Call hook2 in parallel mode
+await callHook(hooks, 'hook2', { runner: 'parallel' });
+```
+
+This will log the following in the console:
+
+```
+This is hook1
+This is hook1
+This is after hook1
+This is hook2
+This is after hook2
+```
+
+#### Execution Modes
+
+- **Serial Mode**: Hooks are executed sequentially, one after the other. This is the default mode.
+- **Parallel Mode**: Hooks are executed concurrently, which can improve performance for independent tasks.
+
+#### Performance Comparison
+
+The test example demonstrates the performance difference between serial and parallel execution:
+
+```javascript
+let startTime = performance.now();
+await callHook(hooks, 'hook1'); // Serial execution
+let endTime = performance.now();
+const timeDiffOnSerial = endTime - startTime;
+
+startTime = performance.now();
+await callHook(hooks, 'hook2', { runner: 'parallel' }); // Parallel execution
+endTime = performance.now();
+const timeDiffOnParallel = endTime - startTime;
+
+const totalDiffOnConfig = timeDiffOnSerial - timeDiffOnParallel;
+expect(totalDiffOnConfig).greaterThan(0); // Parallel execution is faster
+```
+
+#### Expected Console Output
+
+The following logs are expected when the hooks are called:
+
+```
+This is hook1
+This is hook1
+This is after hook1
+This is hook2
+This is after hook2
+```
+
+#### Notes
+
+- Ensure that hooks are properly registered using the `hook` function before calling them.
+- Use the `runner` option to control the execution mode based on your requirements.
+- Parallel execution is faster for independent tasks but may require careful handling of shared resources.
+
+---
