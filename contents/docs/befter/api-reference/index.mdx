@@ -127,4 +127,20 @@ description: Hook management solution.
   - `currAf`: The current list of after hooks.
   - `addAf`: A function to add new after hooks.
 
+
+
+#### Runner
+
+```javascript
+await callHook(hooks, 'hook1');
+await callHook(hooks, 'hook2', { runner: 'parallel' });
+```
+
+- **Arguments**:
+  - `hooks` (Object): The hook manager object containing all registered hooks.
+  - `label` (String): The label of the hook to be called.
+  - `options` (Object, Optional): Configuration for hook execution. Supported options:
+    - `runner` (String): Execution mode, either `'serial'` (default) or `'parallel'`.
+
+- **Returns**: None.
 ---

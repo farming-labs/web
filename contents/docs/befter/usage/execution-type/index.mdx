@@ -67,7 +67,7 @@ endTime = performance.now();
 const timeDiffOnParallel = endTime - startTime;
 
 const totalDiffOnConfig = timeDiffOnSerial - timeDiffOnParallel;
-expect(totalDiffOnConfig).greaterThan(0); // Parallel execution is faster
+// totalDiffOnConfig > 0 :  Parallel execution is faster
 ```
 
 #### Expected Console Output
