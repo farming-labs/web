@@ -66,7 +66,7 @@ const COLOR_VARIANTS = {
 
 const AnimatedGrid = () => (
   <motion.div
-    className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"
+    className="absolute inset-0 dark:[mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"
     animate={{
       backgroundPosition: ["0% 0%", "90% 90%"],
     }}

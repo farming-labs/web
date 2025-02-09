@@ -55,11 +55,11 @@ const COLOR_VARIANTS = {
       "border-pink-400/50",
       "border-slate-600/30",
     ],
-    gradient: "from-purple-500/30",
+    gradient: "from-purple-500/90",
   },
   quinary: {
     border: ["border-red-500/60", "border-rose-400/50", "border-slate-600/30"],
-    gradient: "from-stone-500/30",
+    gradient: "from-stone-200 dark:from-stone-500/30",
   }, // red
   senary: {
     border: ["border-blue-500/60", "border-sky-400/50", "border-slate-600/30"],
