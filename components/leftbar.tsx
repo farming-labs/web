@@ -26,7 +26,7 @@ const Icon = ({ className, ...rest }: React.HTMLAttributes<HTMLDivElement>) => {
 };
 export function Leftbar() {
   return (
-    <aside className="md:flex bg-gradient-to-tr from-background via-backgroud/50 to-zinc-900/50 mt-5 sticky top-16 h-[80vh] hidden flex-[1.5] flex-col  overflow-y-auto">
+    <aside className="md:flex bg-gradient-to-tr from-background/20 via-zinc-300 to-zinc-200/30 shadow-lg dark:from-background dark:via-backgroud/50 dark:to-zinc-900/50 mt-5 sticky top-16 h-[80vh] hidden flex-[1.5] flex-col  overflow-y-auto">
       <div className="px-4 py-4 border-2 border-zinc-100 dark:border-zinc-700/20 relative min-w-[238px]  h-full rounded-sm">
         <Icon className="-top-0.5 -left-0.5 border-l-2 border-t-2 rounded-tl-sm" />
         <Icon className="-top-0.5 -right-0.5 border-r-2 border-t-2 rounded-tr-sm" />
