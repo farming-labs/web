@@ -9,8 +9,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 const cardContent = {
   title: "Lorem ipsum dolor",
-  description:
-    "Focuses on fixing JavaScript functionality, with a series of npm packages and APIs designed to make your development process smoother and more efficient.",
+  description: "JS need depamine level copium to deal with it in a normal day.",
 };
 const CardBody = ({ className = "p-4" }) => (
   <div className={cn("text-center mb-7 space-y-5 pt-10", className)}>
