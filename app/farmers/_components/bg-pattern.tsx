@@ -148,9 +148,8 @@ export function BackgroundCircles({
             "drop-shadow-[0_0_32px_rgba(94,234,212,0.4)]",
           )}
         >
-          Farming-Labs Community
+          Farming-Labs <p className="text-[#f0db4f]">Community</p>
         </h2>
-
         <motion.p
           className="mt-6 mb-10 text-lg md:text-xl dark:text-white text-slate-950"
           initial={{ opacity: 0 }}
