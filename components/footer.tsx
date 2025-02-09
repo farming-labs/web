@@ -4,7 +4,7 @@ import { CommandIcon, HeartIcon } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t z-10 backdrop-blur-md fixed bottom-0 mt-10 w-full h-16">
+    <footer className="border-t z-10 backdrop-blur-md sticky bottom-0 mt-10 w-full h-16">
       <div className="container flex items-center sm:justify-between justify-center sm:gap-0 gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3 max-sm:px-4">
         <div className="flex items-center gap-3">
           <CommandIcon className="sm:block hidden w-5 h-5 text-muted-foreground" />
