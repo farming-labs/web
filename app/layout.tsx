@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Space_Mono, Space_Grotesk, VT323 } from "next/font/google";
 import { Footer } from "@/components/footer";
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Header } from "@/components/header";
 
 const sansFont = Space_Grotesk({
