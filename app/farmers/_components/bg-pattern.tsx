@@ -68,7 +68,7 @@ const AnimatedGrid = () => (
   <motion.div
     className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"
     animate={{
-      backgroundPosition: ["0% 0%", "100% 100%"],
+      backgroundPosition: ["0% 0%", "90% 90%"],
     }}
     transition={{
       duration: 40,
@@ -95,13 +95,13 @@ export function BackgroundCircles({
   return (
     <div
       className={clsx(
-        "relative flex h-screen w-full items-center justify-center overflow-hidden",
+        "relative flex min-h-[85vh] w-full items-center justify-center overflow-hidden",
         "bg-white dark:bg-black/5",
         className,
       )}
     >
       <AnimatedGrid />
-      <motion.div className="absolute h-[480px] w-[480px]">
+      <motion.div className="absolute h-[450px] w-[480px]">
         {[0, 1, 2].map((i) => (
           <motion.div
             key={i}

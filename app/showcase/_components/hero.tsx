@@ -10,7 +10,7 @@ import Link from "next/link";
 const cardContent = {
   title: "Lorem ipsum dolor",
   description:
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, hic ipsum! Qui dicta debitis aliquid quo molestias explicabo iure!",
+    "Showcasing Farming Labs: Growing fresh JavaScript fixes with a dash of chaos and a whole lot of speed!",
 };
 const CardBody = ({ className = "p-4" }) => (
   <div className={cn("text-start mb-7 space-y-5  pt-10", className)}>
