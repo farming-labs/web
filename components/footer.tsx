@@ -11,7 +11,7 @@ export function Footer() {
           <p className="text-center">
             Build by{" "}
             <Link className="px-1" href="https://github.com/Kinfe123">
-              kinfish__
+              kinfish
             </Link>
             . The source code is available on{" "}
             <Link
