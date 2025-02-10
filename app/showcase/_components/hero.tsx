@@ -15,7 +15,7 @@ const cardContent = {
 const CardBody = ({ className = "p-4" }) => (
   <div className={cn("text-start mb-7 space-y-5  pt-10", className)}>
     <h2 className="font-pixel text-3xl sm:text-4xl md:text-6xl uppercase">
-      Showcasing - Farming Labs
+      <span className="text-[#f0db4f]">Showcasing</span> - Farming Labs
     </h2>
     <p className="text-gray-700 max-w-xl mr-auto dark:text-gray-300">
       {cardContent.description}
