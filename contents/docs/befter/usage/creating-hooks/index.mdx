@@ -37,7 +37,7 @@ interface HookOptions {
 interface Storage {
   type: "local" | "redis";
   url?: string;
-  client?: RedisClient;
+  client?: RedisClient; // or any client that we support refer to client section
 }
 ```
 
