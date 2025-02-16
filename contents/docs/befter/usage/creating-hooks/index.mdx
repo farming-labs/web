@@ -24,6 +24,8 @@ The `createBefter` function is used to create a new hook manager. It returns an 
 The `HookOptions` interface allows customization of the hook system within `createBefter`, including execution behavior, storage type, and Redis configuration.
 
 ```typescript
+type HookFunctionRunner = "serial" | "parallel";
+
 interface HookOptions {
   afterRunner?: HookFunctionRunner;
   beforeRunner?: HookFunctionRunner;
@@ -31,6 +33,7 @@ interface HookOptions {
   storage?: Storage;
   redisUrl?: string;
 }
+
 interface Storage {
   type: "local" | "redis";
   url?: string;
