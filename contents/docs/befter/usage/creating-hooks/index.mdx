@@ -19,14 +19,34 @@ Befter is a simple and effective JavaScript library for managing hooks in your a
 
 The `createBefter` function is used to create a new hook manager. It returns an object that can hold various hooks associated with labels.
 
+### Hook Options
+
+The `HookOptions` interface allows customization of the hook system within `createBefter`, including execution behavior, storage type, and Redis configuration.
+
+````typescript
+interface HookOptions {
+	allowDeprecated?: boolean;
+	afterRunner?: HookFunctionRunner;
+	beforeRunner?: HookFunctionRunner;
+	runner?: HookFunctionRunner;
+	storage?: Storage;
+	redisUrl?: string;
+}
+- **`allowDeprecated`** – Allows execution of deprecated hooks if set to `true`.
+- **`afterRunner`** – Defines how `after` hooks run (`"serial"` or `"parallel"`).
+- **`beforeRunner`** – Defines how `before` hooks run (`"serial"` or `"parallel"`).
+- **`runner`** – Controls execution mode for all hooks unless overridden (`"serial"` or `"parallel"`).
+- **`storage`** – Determines where hooks are stored (`"local"` for in-memory, `"redis"` for Redis storage).
+- **`redisUrl`** – Specifies the Redis connection URL when `storage` is set to `"redis"`.
+
 #### Usage
 
 ```javascript
 import { createBefter, hook, callHook } from "@farming-labs/befter";
-const hooks = createBefter();
-```
+const hooks = createBefter({});
+````
 
-- **Arguments**: None.
+- **Arguments**: None. - No options
 - **Returns**: An object representing the hook manager.
 
 #### Storage Options
@@ -45,9 +65,11 @@ In a larger application, you would call `createBefter()` to initialize your hook
 import { createBefter, hook } from "@farming-labs/befter";
 import { createClient } from "redis";
 
+// using redis locally
 const redisClient = createClient({ url: "redis://localhost:6379" });
 await redisClient.connect();
 
+// Initialize the hook manager
 const hooks = createBefter({
   storage: {
     type: "redis",
@@ -72,14 +94,12 @@ const hooks = createBefter();
 
 #### Definition
 
-The `hook` function allows you to associate a hook function with a specific label. This function will be stored in the hook manager, and you can call it later.
+The `hook` function allows you to associate a hook function with a specific label. This function will be stored in the hook manager, and you can call it later. Befter supports multiple storage backends, including Redis, enabling distributed hook management.
 
 #### Usage
 
 ```javascript
-const { currHook, removeHook } = hook(hooks, "hook1", () =>
-  console.log("This is a hook"),
-);
+const {(currHook, removeHook)} = await hook(hooks, "hook1", ()=> console.log("This is a hook"), );
 ```
 
 - **Arguments**:
