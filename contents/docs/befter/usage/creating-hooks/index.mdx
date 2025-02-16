@@ -127,7 +127,7 @@ Imagine you need to handle form submission and want to execute hooks before and 
 const hooks = createBefter();
 
 // Add a hook for form submission
-hook(hooks, "formSubmit", () => console.log("Form submitted!"));
+await hook(hooks, "formSubmit", () => console.log("Form submitted!"));
 ```
 
 But for redis, we have to `await` the response since we are gonna make async call to the storage server.
