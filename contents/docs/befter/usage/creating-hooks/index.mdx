@@ -32,7 +32,6 @@ interface HookOptions {
 	storage?: Storage;
 	redisUrl?: string;
 }
-- **`allowDeprecated`** – Allows execution of deprecated hooks if set to `true`.
 - **`afterRunner`** – Defines how `after` hooks run (`"serial"` or `"parallel"`).
 - **`beforeRunner`** – Defines how `before` hooks run (`"serial"` or `"parallel"`).
 - **`runner`** – Controls execution mode for all hooks unless overridden (`"serial"` or `"parallel"`).
@@ -78,7 +77,7 @@ const hooks = createBefter({
   },
 });
 
-hook(hooks, "hook1", () => console.log("This is a Redis hook"));
+await hook(hooks, "hook1", () => console.log("This is a Redis hook"));
 ```
 
 ```javascript
@@ -121,5 +120,7 @@ const hooks = createBefter();
 // Add a hook for form submission
 hook(hooks, "formSubmit", () => console.log("Form submitted!"));
 ```
+
+But for redis, we have to `await` the response since we are gonna make async call to the storage server.
 
 ---
