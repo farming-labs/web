@@ -3,8 +3,6 @@ title: Creating Hooks.
 description: Hook management solution.
 ---
 
-
-
 # Usage Documentation for Befter
 
 ## Introduction
@@ -31,9 +29,35 @@ const hooks = createBefter();
 - **Arguments**: None.
 - **Returns**: An object representing the hook manager.
 
+#### Storage Options
+
+Befter supports the following storage options:
+
+- **Local**: Stores hooks in-memory, suitable for single-instance applications and illustrated on above examples.
+- **Redis**: Stores hooks in a Redis database, enabling distributed hook execution across multiple instances
+
 #### Real-World Example
 
 In a larger application, you would call `createBefter()` to initialize your hook manager:
+
+```javascript
+// Using Redis storage
+import { createBefter, hook } from "@farming-labs/befter";
+import { createClient } from "redis";
+
+const redisClient = createClient({ url: "redis://localhost:6379" });
+await redisClient.connect();
+
+const hooks = createBefter({
+  storage: {
+    type: "redis",
+    url: "redis://localhost:6379",
+    client: redisClient,
+  },
+});
+
+hook(hooks, "hook1", () => console.log("This is a Redis hook"));
+```
 
 ```javascript
 // Initialize the hook manager
@@ -53,14 +77,16 @@ The `hook` function allows you to associate a hook function with a specific labe
 #### Usage
 
 ```javascript
-const { currHook, removeHook } = hook(hooks, 'hook1', () => console.log('This is a hook'));
+const { currHook, removeHook } = hook(hooks, "hook1", () =>
+  console.log("This is a hook"),
+);
 ```
 
 - **Arguments**:
   - `hooks` (Object): The hook manager object.
   - `label` (String): A label to associate with the hook.
   - `fn` (Function): The function to be executed when the hook is called.
-      - This could also be an array of `fn` (function) to be excuted serially by default but could be parallel based on your config. See here.
+    - This could also be an array of `fn` (function) to be excuted serially by default but could be parallel based on your config. See here.
 - **Returns**: An object containing:
   - `currHook`: The current list of functions for the specified label.
   - `removeHook`: A function used to remove a specific hook.
@@ -73,7 +99,7 @@ Imagine you need to handle form submission and want to execute hooks before and 
 const hooks = createBefter();
 
 // Add a hook for form submission
-hook(hooks, 'formSubmit', () => console.log('Form submitted!'));
+hook(hooks, "formSubmit", () => console.log("Form submitted!"));
 ```
 
 ---
