@@ -23,15 +23,17 @@ The `createBefter` function is used to create a new hook manager. It returns an 
 
 The `HookOptions` interface allows customization of the hook system within `createBefter`, including execution behavior, storage type, and Redis configuration.
 
-````typescript
+```typescript
 interface HookOptions {
-	allowDeprecated?: boolean;
-	afterRunner?: HookFunctionRunner;
-	beforeRunner?: HookFunctionRunner;
-	runner?: HookFunctionRunner;
-	storage?: Storage;
-	redisUrl?: string;
+  allowDeprecated?: boolean;
+  afterRunner?: HookFunctionRunner;
+  beforeRunner?: HookFunctionRunner;
+  runner?: HookFunctionRunner;
+  storage?: Storage;
+  redisUrl?: string;
 }
+```
+
 - **`afterRunner`** – Defines how `after` hooks run (`"serial"` or `"parallel"`).
 - **`beforeRunner`** – Defines how `before` hooks run (`"serial"` or `"parallel"`).
 - **`runner`** – Controls execution mode for all hooks unless overridden (`"serial"` or `"parallel"`).
@@ -43,7 +45,7 @@ interface HookOptions {
 ```javascript
 import { createBefter, hook, callHook } from "@farming-labs/befter";
 const hooks = createBefter({});
-````
+```
 
 - **Arguments**: None. - No options
 - **Returns**: An object representing the hook manager.
