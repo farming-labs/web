@@ -31,7 +31,6 @@ interface HookOptions {
   beforeRunner?: HookFunctionRunner;
   runner?: HookFunctionRunner;
   storage?: Storage;
-  redisUrl?: string;
 }
 
 interface Storage {
@@ -106,7 +105,9 @@ The `hook` function allows you to associate a hook function with a specific labe
 #### Usage
 
 ```javascript
-const {(currHook, removeHook)} = await hook(hooks, "hook1", ()=> console.log("This is a hook"), );
+const { currHook, removeHook } = await hook(hooks, "hook1", () =>
+  console.log("This is a hook"),
+);
 ```
 
 - **Arguments**:
