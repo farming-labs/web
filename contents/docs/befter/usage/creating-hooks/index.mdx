@@ -31,6 +31,11 @@ interface HookOptions {
   storage?: Storage;
   redisUrl?: string;
 }
+interface Storage {
+  type: "local" | "redis";
+  url?: string;
+  client?: RedisClient;
+}
 ```
 
 - **`afterRunner`** – Defines how `after` hooks run (`"serial"` or `"parallel"`).
