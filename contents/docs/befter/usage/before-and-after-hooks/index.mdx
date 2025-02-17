@@ -71,20 +71,20 @@ import { createBefter, hook, callHook } from "@farming-labs/befter";
 const hooks = createBefter();
 
 // Create a hook labeled "hook1" with a main function
-const { afterMeta: af } = hook(hooks, "hook1", () => {
+const { afterMeta: af } = await hook(hooks, "hook1", () => {
   console.log("Main function executed");
 });
 
 // Access the current after hooks list and the function to add a new one
-const [currAf, addAf] = af();
+const [currAf, addAf] = await af();
 
 // Add an after hook
-addAf(() => {
+await addAf(() => {
   console.log("After hook executed");
 });
 
 // Call the hook, which will execute the main function first, then the after hook
-callHook(hooks, "hook1");
+await callHook(hooks, "hook1");
 ```
 
 
@@ -109,28 +109,28 @@ import { createBefter, hook, callHook } from "@farming-labs/befter";
 const hooks = createBefter();
 
 // Create a hook labeled "userLogin" with a main function for user login
-const { beforeMeta: bf, afterMeta: af } = hook(hooks, "userLogin", () => {
+const { beforeMeta: bf, afterMeta: af } = await hook(hooks, "userLogin", () => {
   console.log("User logged in successfully");
 });
 
 // Access the current before hooks list and the function to add a new one
-const [currBf, addBf] = bf();
+const [currBf, addBf] = await bf();
 
 // Add a before hook for authentication check
-addBf(() => {
+await addBf(() => {
   console.log("Checking user credentials...");
 });
 
 // Access the current after hooks list and the function to add a new one
-const [currAf, addAf] = af();
+const [currAf, addAf] = await af();
 
 // Add an after hook to send a confirmation email
-addAf(() => {
+await addAf(() => {
   console.log("Sending confirmation email...");
 });
 
 // Call the hook, which will execute the before hook first, then the main function, and finally the after hook
-callHook(hooks, "userLogin");
+await callHook(hooks, "userLogin");
 
 ```
 ```plaintext
