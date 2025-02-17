@@ -15,7 +15,7 @@ The `callHook` function triggers all the hooks associated with a specific label.
 #### Usage
 
 ```javascript
-callHook(hooks, 'hook1');
+await callHook(hooks, 'hook1');
 ```
 
 - **Arguments**:
@@ -30,7 +30,7 @@ After adding the `formSubmit` hook, you can call it like this:
 
 ```javascript
 // Call the formSubmit hook
-callHook(hooks, 'formSubmit');
+await callHook(hooks, 'formSubmit');
 ```
 
 This will log `"Form submitted!"` in the console.
