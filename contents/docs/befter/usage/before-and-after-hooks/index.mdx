@@ -160,19 +160,19 @@ import { createBefter, hook, callHook } from "@farming-labs/befter";
 const hooks = createBefter();
 
 // Hook 1 with serial after execution
-const { beforeMeta: bf1, afterMeta: af1 } = hook(hooks, "hook1", () => {
+const { beforeMeta: bf1, afterMeta: af1 } = await hook(hooks, "hook1", () => {
   console.log("This is hook1");
 });
-const [currAf1, addAf1] = af1();
+const [currAf1, addAf1] = await af1();
 addAf1(() => {
   console.log("This is after hook1");
 });
 
 // Hook 2 with parallel after execution
-const { beforeMeta: bf2, afterMeta: af2 } = hook(hooks, "hook2", () => {
+const { beforeMeta: bf2, afterMeta: af2 } = await hook(hooks, "hook2", () => {
   console.log("This is hook2");
 });
-const [currAf2, addAf2] = af2();
+const [currAf2, addAf2] = await af2();
 addAf2(() => {
   console.log("This is after hook2");
 });
