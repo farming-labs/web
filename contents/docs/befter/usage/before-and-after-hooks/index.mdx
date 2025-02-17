@@ -28,20 +28,20 @@ import { createBefter, hook, callHook } from "@farming-labs/befter";
 const hooks = createBefter();
 
 // Create a hook labeled "hook1" with a main function
-const { beforeMeta: bf } = hook(hooks, "hook1", () => {
+const { beforeMeta: bf } =  await hook(hooks, "hook1", () => {
   console.log("Main function executed");
 });
 
 // Access the current before hooks list and the function to add a new one
-const [currBf, addBf] = bf();
+const [currBf, addBf] = await bf();
 
 // Add a before hook
-addBf(() => {
+await addBf(() => {
   console.log("Before hook executed");
 });
 
 // Call the hook, which will execute the before hook first, then the main function
-callHook(hooks, "hook1");
+await callHook(hooks, "hook1");
 ```
 
 ## Expected Output
