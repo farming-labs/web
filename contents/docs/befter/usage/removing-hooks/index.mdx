@@ -14,10 +14,11 @@ The `removeHook` function removes a specific hook from a given label. You must s
 #### Usage
 
 ```javascript
-removeHook(hooks, 'hook1', hook1[0]);
+await removeHook(hooks, "hook1", hook1[0]);
 ```
 
 - **Arguments**:
+
   - `hooks` (Object): The hook manager object.
   - `label` (String): The label of the hook to be removed.
   - `hookFunction` (Function): The hook function to be removed.
@@ -30,19 +31,20 @@ You may want to remove a specific hook after it has been executed:
 
 ```javascript
 // Add a hook
-const { currHook, removeHook } = hook(hooks, 'hook1', () => console.log('This is a hook'));
+const { currHook, removeHook } = hook(hooks, "hook1", () =>
+  console.log("This is a hook"),
+);
 
 // Call the hook
-callHook(hooks, 'hook1');
+await callHook(hooks, "hook1");
 
 // Remove the hook after calling it
-removeHook(hooks, 'hook1', currHook['hook1'][0]);
+await removeHook(hooks, "hook1", currHook["hook1"][0]);
 ```
 
 This will remove the first hook of `hook1` and prevent it from being called again.
 
-
-###  Remove Hook Itself
+### Remove Hook Itself
 
 `removeHookItSelf(hooks, label)`
 
@@ -53,10 +55,11 @@ The `removeHookItSelf` function removes all hooks associated with the given labe
 #### Usage
 
 ```javascript
-removeHookItSelf(hooks, 'hook1');
+await removeHookItSelf(hooks, "hook1");
 ```
 
 - **Arguments**:
+
   - `hooks` (Object): The hook manager object.
   - `label` (String): The label of the hook to be removed.
 
@@ -68,13 +71,13 @@ In a scenario where a hook should only run once, you can remove it after executi
 
 ```javascript
 // Add a hook for logging in
-hook(hooks, 'login', () => console.log('Logging in...'));
+await hook(hooks, "login", () => console.log("Logging in..."));
 
 // Call the hook
-callHook(hooks, 'login');
+await callHook(hooks, "login");
 
 // Remove the hook after it is called
-removeHookItSelf(hooks, 'login');
+await removeHookItSelf(hooks, "login");
 ```
 
 ---
