@@ -56,7 +56,7 @@ The `getHookWithIndex` function retrieves a hook function from the list based on
 #### Usage
 
 ```javascript
-const hookFunction = getHookWithIndex(hooks, "hook1", 0);
+const hookFunction = await getHookWithIndex(hooks, "hook1", 0);
 ```
 
 - **Arguments**:
@@ -73,12 +73,12 @@ You can retrieve a specific hook to update or replace it:
 
 ```javascript
 // Add hooks for form validation
-const { currHook } = hook(hooks, "formValidate", () =>
+const { currHook } = await hook(hooks, "formValidate", () =>
   console.log("Validating form"),
 );
 
 // Get the hook at index 0
-const firstHook = getHookWithIndex(hooks, "formValidate", 0);
+const firstHook = await getHookWithIndex(hooks, "formValidate", 0);
 console.log(firstHook); // Function: () => console.log('Validating form')
 ```
 
