@@ -38,6 +38,8 @@ await hook(hooks, "afterSave", () => console.log("After saving"));
 
 // Retrieve and call all hooks for 'beforeSave'
 const beforeSaveHooks = await getHook(hooks, "beforeSave");
+
+// You can use our callHook function to execute the hooks with a flexiblity of executing them in parallel or serially instead of calling them manually.
 beforeSaveHooks.forEach((fn) => fn());
 ```
 
