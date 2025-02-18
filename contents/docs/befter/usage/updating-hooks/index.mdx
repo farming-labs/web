@@ -14,10 +14,13 @@ The `updateHook` function is used to replace an existing hook function associate
 #### Usage
 
 ```javascript
-updateHook(hooks, 'hook1', currHook['hook1'][0], () => console.log('Updated hook'));
+await updateHook(hooks, "hook1", currHook["hook1"][0], () =>
+  console.log("Updated hook"),
+);
 ```
 
 - **Arguments**:
+
   - `hooks` (Object): The hook manager object.
   - `label` (String): The label of the hook to be updated.
   - `hookFunction` (Function): The existing hook function to be replaced.
@@ -34,16 +37,18 @@ import { createBefter, hook, callHook } from "@farming-labs/befter";
 const hooks = createBefter();
 
 // Add initial login hook
-let { currHook } = hook(hooks, 'login', () => console.log('Logging in...'));
+let { currHook } = hook(hooks, "login", () => console.log("Logging in..."));
 
 // Call the initial hook
-callHook(hooks, 'login');
+await callHook(hooks, "login");
 
 // Update the login hook with new functionality
-updateHook(hooks, 'login', currHook['login'][0], () => console.log('Logging in with new logic...'));
+await updateHook(hooks, "login", currHook["login"][0], () =>
+  console.log("Logging in with new logic..."),
+);
 
 // Call the updated hook
-callHook(hooks, 'login');
+await callHook(hooks, "login");
 ```
 
 ---
