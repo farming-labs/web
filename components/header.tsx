@@ -56,7 +56,7 @@ export function Header() {
               </Link>
               <div className="flex items-center gap-3">
                 <Link
-                  href="https://github.com/farming-labs/befter"
+                  href="https://github.com/farming-labs/web"
                   className={buttonVariants({
                     variant: "ghost",
                     size: "icon",
