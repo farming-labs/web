@@ -190,6 +190,9 @@ export function HeroTypewriter() {
             >
              website 
             </a> 
+            <span className="text-zinc-600/80" aria-hidden>
+              ·
+            </span>
             <a
               href={AUTHOR_SOCIAL.email}
               className="transition-colors hover:text-zinc-100"
