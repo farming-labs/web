@@ -4,8 +4,7 @@ import { Space_Grotesk, VT323 } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
-// @ts-ignore
-import { Databuddy } from '@databuddy/sdk/react';
+import { Databuddy } from "@databuddy/sdk/react";
 
 const sansFont = Space_Grotesk({
   subsets: ["latin"],
