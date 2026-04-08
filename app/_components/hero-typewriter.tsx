@@ -15,6 +15,7 @@ const AUTHOR_SOCIAL = {
   github: "https://github.com/Kinfe123",
   x: "https://x.com/KinfishT",
   email: "mailto:kinfetare83@gmail.com",
+  website: "https://kinfish.dev"
 } as const;
 
 const PROJECTS: {
