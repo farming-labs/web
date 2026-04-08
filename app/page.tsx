@@ -1,9 +1,5 @@
-import HeroSection from "./_components/bordered-hero";
+import HomeGradient from "./_components/home-gradient";
 
 export default function Home() {
-  return (
-    <div className="overflow-hidden">
-      <HeroSection />
-    </div>
-  );
+  return <HomeGradient />;
 }
