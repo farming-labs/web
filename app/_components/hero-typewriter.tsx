@@ -31,7 +31,7 @@ const PROJECTS: {
     },
     {
       pkg: "@farming-labs/orm",
-      description: "ORM",
+      description: "Unified DSL Schema. Many Output",
       href: "https://orm.farming-labs.dev",
       label: "orm.farming-labs.dev",
     },
