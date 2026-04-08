@@ -180,13 +180,7 @@ export function HeroTypewriter() {
             <span className="text-zinc-600/80" aria-hidden>
               ·
             </span>
-            <a
-              href={AUTHOR_SOCIAL.email}
-              className="transition-colors hover:text-zinc-100"
-            >
-              email
-            </a>
-            <span className="text-zinc-600/80" aria-hidden>
+          <span className="text-zinc-600/80" aria-hidden>
               ·
             </span>
             <a
@@ -194,7 +188,14 @@ export function HeroTypewriter() {
               className="transition-colors hover:text-zinc-100"
             >
              website 
+            </a> 
+            <a
+              href={AUTHOR_SOCIAL.email}
+              className="transition-colors hover:text-zinc-100"
+            >
+              email
             </a>
+            
           </span>
         </div>
       </div>
