@@ -4,6 +4,8 @@ import { Space_Grotesk, VT323 } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
+// @ts-ignore
+import { Databuddy } from '@databuddy/sdk/react';
 
 const sansFont = Space_Grotesk({
   subsets: ["latin"],
@@ -19,8 +21,8 @@ const vt = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Farming Labs",
-  metadataBase: new URL("https://farming-labs.vercel.app/"),
+  title: "Farming Labs - @farming-labs/*",
+  metadataBase: new URL("https://farming-labs.dev/"),
   description: "Fixing JS problems",
 };
 
