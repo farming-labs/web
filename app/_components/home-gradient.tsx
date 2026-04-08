@@ -10,9 +10,13 @@ export default function HomeGradient() {
       <div className="relative min-h-[100dvh] w-full">
         <div className="absolute inset-0 z-0">
           <Grainient
-            color1="#7C7C7C"
-            color2="#181818"
-            color3="#050505"
+          //  color1="#3D3D3D"
+          color1="#7C7C7C"
+           color2="#0A0A0A"
+           color3="#000000"
+            // color1="#7C7C7C"
+            // color2="#181818"
+            // color3="#050505"
             timeSpeed={0.2}
             colorBalance={0.02}
             warpStrength={0.8}
@@ -26,8 +30,8 @@ export default function HomeGradient() {
             grainAmount={0.08}
             grainScale={2.2}
             grainAnimated={false}
-            contrast={1.08}
-            gamma={1.08}
+            contrast={1.02}
+            gamma={1.12}
             saturation={0}
             centerX={0}
             centerY={0}
@@ -35,15 +39,15 @@ export default function HomeGradient() {
           />
         </div>
         <div
-          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-br from-black/48 via-black/28 to-black/52"
+          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-br from-black/62 via-black/42 to-black/68"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_80%_60%_at_50%_35%,transparent_15%,rgba(0,0,0,0.48)_100%)]"
+          className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_85%_65%_at_50%_32%,transparent_8%,rgba(0,0,0,0.62)_100%)]"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-0 z-[1] bg-white/[0.03]"
+          className="pointer-events-none absolute inset-0 z-[1] bg-black/18"
           aria-hidden
         />
 
@@ -52,10 +56,10 @@ export default function HomeGradient() {
             <h1 className="font-pixel text-3xl uppercase leading-[1.05] tracking-tight text-zinc-100/85 sm:text-4xl md:text-5xl drop-shadow-[0_4px_32px_rgba(0,0,0,0.55)]">
               Farming Labs
             </h1>
-            <div
+            {/* <div
               className="mt-5 h-px w-full max-w-md bg-gradient-to-r from-zinc-500/55 via-zinc-400/25 to-transparent"
               aria-hidden
-            />
+            /> */}
             <HeroTypewriter />
           </div>
         </div>

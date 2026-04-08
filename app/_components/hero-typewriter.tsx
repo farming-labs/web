@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ExternalLinkIcon } from "lucide-react";
 
-const LINE1 = "JS needs a dopamine hit—we already knew.";
+const LINE1 = "JS needs a dopamine boost—we already knew.";
 const LINE2 = "So we just started fixing it for you.";
 
 const CHAR_MS = 26;
@@ -16,31 +16,31 @@ const PROJECTS: {
   href: string;
   label: string;
 }[] = [
-  {
-    pkg: "@farming-labs/docs",
-    description: "Docs framework",
-    href: "https://docs.farming-labs.dev",
-    label: "docs.farming-labs.dev",
-  },
-  {
-    pkg: "@farming-labs/orm",
-    description: "ORM",
-    href: "https://orm.farming-labs.dev",
-    label: "orm.farming-labs.dev",
-  },
-  {
-    pkg: "@farming-labs/mini-dev",
-    description: "Dev server",
-    href: "https://github.com/farming-labs/mini-dev",
-    label: "github.com/farming-labs/mini-dev",
-  },
-  {
-    pkg: "farm-ui",
-    description: "UI kit",
-    href: "https://farm-ui.com",
-    label: "farm-ui.com",
-  },
-];
+    {
+      pkg: "@farming-labs/docs",
+      description: "Docs framework",
+      href: "https://docs.farming-labs.dev",
+      label: "docs.farming-labs.dev",
+    },
+    {
+      pkg: "@farming-labs/orm",
+      description: "ORM",
+      href: "https://orm.farming-labs.dev",
+      label: "orm.farming-labs.dev",
+    },
+    {
+      pkg: "@farming-labs/mini-dev",
+      description: "Dev server",
+      href: "https://github.com/farming-labs/mini-dev",
+      label: "github.com/farming-labs/mini-dev",
+    },
+    {
+      pkg: "farm-ui",
+      description: "UI library",
+      href: "https://farmui.com",
+      label: "farmui.com",
+    },
+  ];
 
 function Cursor({ active }: { active: boolean }) {
   return (
@@ -104,10 +104,9 @@ export function HeroTypewriter() {
           </span>
         </p>
       </div>
-
-      <div className="mt-8 border-t border-zinc-500/20 pt-6 text-left md:mt-10 md:pt-8">
-        <p className="mb-4 font-code text-[0.65rem] uppercase tracking-[0.18em] text-zinc-500 sm:text-xs">
-          Building & shipping
+      <div className="mt-8 border-t border-zinc-500/70 pt-6 text-left md:mt-10 md:pt-8">
+        <p className="mb-7 font-code text-[0.65rem] uppercase tracking-wide text-zinc-200 underline decoration-zinc-500 underline-offset-4 decoration-dashed sm:text-xs">
+          fixing & shipping
         </p>
         <ul className="flex flex-col gap-4 sm:gap-5">
           {PROJECTS.map((item) => (
@@ -119,11 +118,11 @@ export function HeroTypewriter() {
                 className="group block font-code text-sm text-zinc-200/95 transition-colors hover:text-zinc-50 sm:text-base md:text-lg"
               >
                 <span className="text-zinc-100">{item.pkg}</span>
-                <span className="mx-2 text-zinc-600">—</span>
-                <span className="text-zinc-400">{item.description}</span>
-                <span className="mt-1 block text-xs text-zinc-500 sm:text-sm md:text-base">
+                <span className="mx-2 text-zinc-400">—</span>
+                <span className="text-zinc-400 uppercase text-sm">{item.description}</span>
+                <span className="mt-1 block text-xs text-zinc-500 sm:text-[12px]">
                   <span className="text-zinc-500">{item.label}</span>
-                  <ExternalLinkIcon className="ml-1.5 inline-block size-3 shrink-0 opacity-50 transition-opacity group-hover:opacity-90 sm:size-3.5" />
+                  <ExternalLinkIcon className="ml-1.5 inline-block size-2 shrink-0 opacity-50 transition-opacity group-hover:opacity-90 sm:size-3.5" />
                 </span>
               </a>
             </li>
