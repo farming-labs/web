@@ -113,6 +113,10 @@ const config = {
               "translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)))",
           },
         },
+        "typewriter-cursor-blink": {
+          "0%, 45%": { opacity: "1" },
+          "55%, 100%": { opacity: "0" },
+        },
       },
       animation: {
         "star-movement-bottom":
@@ -122,6 +126,8 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "background-gradient":
           "background-gradient var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite",
+        "typewriter-cursor-blink":
+          "typewriter-cursor-blink 1.05s step-end infinite",
       },
     },
   },

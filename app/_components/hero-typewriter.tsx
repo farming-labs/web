@@ -2,13 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { ExternalLinkIcon } from "lucide-react";
+import { ArrowUpRight, ExternalLinkIcon } from "lucide-react";
 
 const LINE1 = "JS needs a dopamine boost—we already knew.";
 const LINE2 = "So we just started fixing it for you.";
 
 const CHAR_MS = 26;
 const BETWEEN_MS = 520;
+
+/** Update `EMAIL` if you want a different public address. */
+const AUTHOR_SOCIAL = {
+  github: "https://github.com/Kinfe123",
+  x: "https://x.com/KinfishT",
+  email: "mailto:kinfetare83@gmail.com",
+} as const;
 
 const PROJECTS: {
   pkg: string;
@@ -42,13 +49,15 @@ const PROJECTS: {
     },
   ];
 
-function Cursor({ active }: { active: boolean }) {
+function TypewriterCursor({ visible }: { visible: boolean }) {
   return (
     <span
       className={cn(
-        "ml-0.5 inline-block h-[1.05em] w-[2px] translate-y-[0.08em] align-middle",
-        "bg-zinc-400/90 shadow-[0_0_12px_rgba(255,255,255,0.12)]",
-        active ? "animate-pulse" : "opacity-0",
+        "ml-0.5 inline-block h-[1.12em] w-[2px] min-w-[2px] translate-y-[0.05em] align-middle rounded-[1px]",
+        "bg-zinc-100/85 shadow-[0_0_14px_rgba(255,255,255,0.35)]",
+        visible
+          ? "animate-typewriter-cursor-blink [animation-fill-mode:none]"
+          : "pointer-events-none opacity-0",
       )}
       aria-hidden
     />
@@ -78,8 +87,6 @@ export function HeroTypewriter() {
     }
   }, [phase, i1, i2]);
 
-  const cursorLine1 = phase === "l1";
-
   const lineClass =
     "font-code text-base leading-snug tracking-tight text-zinc-300/95 drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)] sm:text-lg md:text-xl";
 
@@ -88,11 +95,10 @@ export function HeroTypewriter() {
       <h2 className="sr-only">
         {LINE1} {LINE2}
       </h2>
-      {/* Invisible full line 2 reserves space from the start so typing line 2 does not push layout */}
       <div className="flex flex-col gap-4 sm:gap-5">
         <p className={lineClass}>
           {LINE1.slice(0, i1)}
-          <Cursor active={cursorLine1} />
+          <TypewriterCursor visible={phase === "l1"} />
         </p>
         <p className={cn(lineClass, "relative text-zinc-400/95")}>
           <span className="invisible block select-none" aria-hidden>
@@ -100,7 +106,7 @@ export function HeroTypewriter() {
           </span>
           <span className="absolute left-0 top-0 block max-w-full text-zinc-400/95">
             {LINE2.slice(0, i2)}
-            <Cursor active={phase === "l2"} />
+            <TypewriterCursor visible={phase === "l2" || phase === "done"} />
           </span>
         </p>
       </div>
@@ -120,9 +126,9 @@ export function HeroTypewriter() {
                 <span className="text-zinc-100">{item.pkg}</span>
                 <span className="mx-2 text-zinc-400">—</span>
                 <span className="text-zinc-400 uppercase text-sm">{item.description}</span>
-                <span className="mt-1 block text-xs text-zinc-500 sm:text-[12px]">
+                <span className="mt-1 block text-xs text-zinc-400 sm:text-[12px]">
                   <span className="text-zinc-500">{item.label}</span>
-                  <ExternalLinkIcon className="ml-1.5 inline-block size-2 shrink-0 opacity-50 transition-opacity group-hover:opacity-90 sm:size-3.5" />
+                  <ArrowUpRight className="ml-1.5 inline-block size-2 shrink-0 opacity-50 transition-opacity group-hover:opacity-90 sm:size-3.5" />
                 </span>
               </a>
             </li>
@@ -140,18 +146,42 @@ export function HeroTypewriter() {
           </a>{" "}
           on GitHub for releases.
         </p>
-        <p className="mt-10 font-code text-xs text-zinc-500 sm:text-sm">
-          Built by{" "}
-          <a
-            href="https://github.com/Kinfe123"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-300 underline decoration-zinc-600 underline-offset-4 transition-colors hover:text-zinc-100"
-          >
-            Kinfe123
-          </a>
-          .
-        </p>
+        <div className="mt-10 border-t border-zinc-500/20 pt-10 flex flex-wrap items-center gap-x-3 gap-y-2 font-code text-xs text-zinc-500 sm:text-sm">
+          <span
+            className="inline-block h-4 w-[3px] shrink-0 self-center bg-zinc-500/45"
+            aria-hidden
+          />
+          <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-zinc-400">
+            <a
+              href={AUTHOR_SOCIAL.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-zinc-100"
+            >
+              github
+            </a>
+            <span className="text-zinc-600/80" aria-hidden>
+              ·
+            </span>
+            <a
+              href={AUTHOR_SOCIAL.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-zinc-100"
+            >
+              twitter [ x ]
+            </a>
+            <span className="text-zinc-600/80" aria-hidden>
+              ·
+            </span>
+            <a
+              href={AUTHOR_SOCIAL.email}
+              className="transition-colors hover:text-zinc-100"
+            >
+              email
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   );
