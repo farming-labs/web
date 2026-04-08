@@ -117,6 +117,29 @@ const config = {
           "0%, 45%": { opacity: "1" },
           "55%, 100%": { opacity: "0" },
         },
+        glitch: {
+          "0%": { clipPath: "inset(20% 0 50% 0)" },
+          "5%": { clipPath: "inset(10% 0 60% 0)" },
+          "10%": { clipPath: "inset(15% 0 55% 0)" },
+          "15%": { clipPath: "inset(25% 0 35% 0)" },
+          "20%": { clipPath: "inset(30% 0 40% 0)" },
+          "25%": { clipPath: "inset(40% 0 20% 0)" },
+          "30%": { clipPath: "inset(10% 0 60% 0)" },
+          "35%": { clipPath: "inset(15% 0 55% 0)" },
+          "40%": { clipPath: "inset(25% 0 35% 0)" },
+          "45%": { clipPath: "inset(30% 0 40% 0)" },
+          "50%": { clipPath: "inset(20% 0 50% 0)" },
+          "55%": { clipPath: "inset(10% 0 60% 0)" },
+          "60%": { clipPath: "inset(15% 0 55% 0)" },
+          "65%": { clipPath: "inset(25% 0 35% 0)" },
+          "70%": { clipPath: "inset(30% 0 40% 0)" },
+          "75%": { clipPath: "inset(40% 0 20% 0)" },
+          "80%": { clipPath: "inset(20% 0 50% 0)" },
+          "85%": { clipPath: "inset(10% 0 60% 0)" },
+          "90%": { clipPath: "inset(15% 0 55% 0)" },
+          "95%": { clipPath: "inset(25% 0 35% 0)" },
+          "100%": { clipPath: "inset(30% 0 40% 0)" },
+        },
       },
       animation: {
         "star-movement-bottom":
@@ -128,6 +151,10 @@ const config = {
           "background-gradient var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite",
         "typewriter-cursor-blink":
           "typewriter-cursor-blink 1.05s step-end infinite",
+        "glitch-after":
+          "glitch var(--after-duration) infinite linear alternate-reverse",
+        "glitch-before":
+          "glitch var(--before-duration) infinite linear alternate-reverse",
       },
     },
   },

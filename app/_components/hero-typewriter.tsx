@@ -129,9 +129,13 @@ export function HeroTypewriter() {
                 rel="noopener noreferrer"
                 className="group block font-code text-sm text-zinc-200/95 transition-colors hover:text-zinc-50 sm:text-base md:text-lg"
               >
-                <span className="text-zinc-100">{item.pkg}</span>
-                <span className="mx-2 text-zinc-400">—</span>
-                <span className="text-zinc-400 uppercase text-sm">{item.description}</span>
+                <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <span className="whitespace-nowrap text-zinc-100">{item.pkg}</span>
+                  <span className="shrink-0 text-zinc-400">—</span>
+                  <span className="min-w-0 text-zinc-400 uppercase text-sm">
+                    {item.description}
+                  </span>
+                </span>
                 <span className="mt-1 block text-xs text-zinc-400 sm:text-[12px]">
                   <span className="text-zinc-500">{item.label}</span>
                   <ArrowUpRight className="ml-1.5 inline-block size-2 shrink-0 opacity-50 transition-opacity group-hover:opacity-90 sm:size-3.5" />

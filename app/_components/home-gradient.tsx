@@ -1,6 +1,7 @@
 "use client";
 
 import Grainient from "@/components/revamps/Grainient";
+import GlitchText from "@/components/revamps/GlitchText";
 import { HeroTypewriter } from "@/app/_components/hero-typewriter";
 
 export default function HomeGradient() {
@@ -52,9 +53,15 @@ export default function HomeGradient() {
 
         <div className="relative z-10 flex min-h-[100dvh] flex-col px-6 pb-20 pt-[12vh] text-left md:px-12 md:pb-24 md:pt-[14vh] lg:px-16">
           <div className="pointer-events-auto w-full max-w-3xl text-left lg:max-w-4xl">
-            <h1 className="font-pixel text-3xl uppercase leading-[1.05] tracking-tight text-zinc-100/85 sm:text-4xl md:text-5xl drop-shadow-[0_4px_32px_rgba(0,0,0,0.55)]">
+            <GlitchText
+              speed={1}
+              enableShadows
+              autoIntervalSec={10}
+              autoBurstSec={2.2}
+              className="text-3xl leading-[1.05] sm:text-4xl md:text-5xl drop-shadow-[0_4px_32px_rgba(0,0,0,0.55)]"
+            >
               Farming Labs
-            </h1>
+            </GlitchText>
             {/* <div
               className="mt-5 h-px w-full max-w-md bg-gradient-to-r from-zinc-500/55 via-zinc-400/25 to-transparent"
               aria-hidden
