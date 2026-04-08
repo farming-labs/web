@@ -6,7 +6,6 @@ import { HeroTypewriter } from "@/app/_components/hero-typewriter";
 export default function HomeGradient() {
   return (
     <div className="relative w-full flex-1">
-      {/* min-h-screen ensures full viewport; content stretches parent so gradient fills full scroll height */}
       <div className="relative min-h-[100dvh] w-full">
         <div className="absolute inset-0 z-0">
           <Grainient

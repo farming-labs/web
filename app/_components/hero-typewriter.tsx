@@ -47,6 +47,12 @@ const PROJECTS: {
       href: "https://farmui.com",
       label: "farmui.com",
     },
+    {
+      pkg: "@farming-labs/befter",
+      description: "a lightweight hook on your server and client",
+      href: "https://github.com/farming-labs/befter",
+      label: "github.com/farming-labs/befter",
+    },
   ];
 
 function TypewriterCursor({ visible }: { visible: boolean }) {
