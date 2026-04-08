@@ -10,7 +10,6 @@ const LINE2 = "So we just started fixing it for you.";
 const CHAR_MS = 26;
 const BETWEEN_MS = 520;
 
-/** Update `EMAIL` if you want a different public address. */
 const AUTHOR_SOCIAL = {
   github: "https://github.com/Kinfe123",
   x: "https://x.com/KinfishT",
@@ -180,6 +179,15 @@ export function HeroTypewriter() {
               className="transition-colors hover:text-zinc-100"
             >
               email
+            </a>
+            <span className="text-zinc-600/80" aria-hidden>
+              ·
+            </span>
+            <a
+              href={AUTHOR_SOCIAL.website}
+              className="transition-colors hover:text-zinc-100"
+            >
+             website 
             </a>
           </span>
         </div>
