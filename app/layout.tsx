@@ -44,6 +44,8 @@ export default function RootLayout({
           <main className="min-h-screen w-full scroll-smooth">{children}</main>
         </ThemeProvider>
         <Analytics />
+        <Databuddy
+        clientId="aeff7d3b-69f3-42a1-ba24-1b986bca54ed"/>
       </body>
     </html>
   );
