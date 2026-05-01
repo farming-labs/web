@@ -24,6 +24,12 @@ const PROJECTS: {
   label: string;
 }[] = [
     {
+      pkg: "@farmjs/core",
+      description: "meta-framework that is performant with intuitive api and DX",
+      href: "https://farmjs.dev",
+      label: "farmjs.dev",
+    }, 
+    {
       pkg: "@farming-labs/docs",
       description: "Docs framework",
       href: "https://docs.farming-labs.dev",
