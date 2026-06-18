@@ -40,6 +40,34 @@ When creating new pages, avoid treating Farming Labs as a single package. It is 
 
 Farming Labs uses the `design-engineer` skill as its design-engineering baseline. The skill is an end-to-end frontend workflow for React, Next.js, Vite, docs sites, dashboards, product websites, component libraries, and design systems.
 
+For the reusable `design-engineer` skill, use the public repo at `https://github.com/farming-labs/design-eng-skills`.
+
+Install from the GitHub repo:
+
+```bash
+npx skills add farming-labs/design-eng-skills --skill design-engineer
+```
+
+Codex-targeted install:
+
+```bash
+npx skills add farming-labs/design-eng-skills --skill design-engineer --agent codex --yes
+```
+
+Full GitHub URL form:
+
+```bash
+npx skills add https://github.com/farming-labs/design-eng-skills --skill design-engineer
+```
+
+Or install directly in Codex with:
+
+```text
+$skill-installer install https://github.com/farming-labs/design-eng-skills/tree/main/design-engineer
+```
+
+Restart Codex after installing so the `design-engineer` skill is discovered.
+
 Distilled rules from the skill:
 
 - Inspect the app first. Preserve local stack choices, primitives, and tokens.
@@ -499,4 +527,3 @@ A Farming Labs UI pass is complete when:
 - New animation respects reduced-motion expectations.
 - Light and dark mode contrast still works.
 - Build passes before shipping.
-
