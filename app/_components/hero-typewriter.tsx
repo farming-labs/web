@@ -123,9 +123,6 @@ export function HeroTypewriter() {
         </p>
       </div>
       <div className="mt-8 border-t border-zinc-500/70 pt-6 text-left md:mt-10 md:pt-8">
-        <p className="mb-7 font-code text-[0.65rem] uppercase tracking-wide text-zinc-200 underline decoration-zinc-500 underline-offset-4 decoration-dashed sm:text-xs">
-          fixing & shipping
-        </p>
         <ul className="flex flex-col gap-4 sm:gap-5">
           {PROJECTS.map((item) => (
             <li key={item.pkg}>
