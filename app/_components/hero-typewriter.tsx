@@ -122,8 +122,8 @@ export function HeroTypewriter() {
           </span>
         </p>
       </div>
-      <div className="mt-4 border-t border-zinc-500/70 pt-4 text-left sm:mt-5 sm:pt-5 md:mt-6 md:pt-6">
-        <ul className="grid grid-cols-1 gap-2 sm:gap-2.5 md:gap-3">
+      <div className="mt-4 border-t border-zinc-500/70 pt-4 text-left sm:mt-5 sm:pt-5 md:mt-6 md:pt-6 [@media(max-height:640px)]:mt-3 [@media(max-height:640px)]:pt-3">
+        <ul className="grid grid-cols-1 gap-2 sm:gap-2.5 md:gap-3 [@media(max-height:640px)]:gap-1.5">
           {PROJECTS.map((item) => (
             <li key={item.pkg}>
               <a
@@ -163,7 +163,7 @@ export function HeroTypewriter() {
           </a>{" "}
           on GitHub for releases.
         </p>
-        <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 border-t border-zinc-500/20 pt-4 font-code text-[0.68rem] text-zinc-500 sm:mt-5 sm:text-xs">
+        <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 border-t border-zinc-500/20 pt-4 font-code text-[0.68rem] text-zinc-500 sm:mt-5 sm:text-xs [@media(max-height:640px)]:hidden">
           <span
             className="inline-block h-4 w-[3px] shrink-0 self-center bg-zinc-500/45"
             aria-hidden
