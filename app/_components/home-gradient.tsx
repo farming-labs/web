@@ -6,14 +6,14 @@ import { HeroTypewriter } from "@/app/_components/hero-typewriter";
 
 export default function HomeGradient() {
   return (
-    <div className="relative w-full flex-1">
-      <div className="relative min-h-[100dvh] w-full">
+    <div className="relative h-[100dvh] w-full flex-1 overflow-hidden">
+      <div className="relative h-full w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Grainient
-          //  color1="#3D3D3D"
-          color1="#7C7C7C"
-           color2="#0A0A0A"
-           color3="#000000"
+            //  color1="#3D3D3D"
+            color1="#7C7C7C"
+            color2="#0A0A0A"
+            color3="#000000"
             // color1="#7C7C7C"
             // color2="#181818"
             // color3="#050505"
@@ -51,14 +51,14 @@ export default function HomeGradient() {
           aria-hidden
         />
 
-        <div className="relative z-10 flex min-h-[100dvh] flex-col px-6 pb-20 pt-[12vh] text-left md:px-12 md:pb-24 md:pt-[14vh] lg:px-16">
-          <div className="pointer-events-auto w-full max-w-3xl text-left lg:max-w-4xl">
+        <div className="relative z-10 flex h-full flex-col justify-center overflow-hidden px-5 py-[clamp(1rem,4vh,3rem)] text-left sm:px-8 md:px-12 lg:px-16">
+          <div className="pointer-events-auto w-full max-w-3xl text-left lg:max-w-5xl">
             <GlitchText
               speed={1}
               enableShadows
               autoIntervalSec={10}
               autoBurstSec={2.2}
-              className="text-3xl leading-[1.05] sm:text-4xl md:text-5xl drop-shadow-[0_4px_32px_rgba(0,0,0,0.55)]"
+              className="text-3xl leading-[0.98] drop-shadow-[0_4px_32px_rgba(0,0,0,0.55)] sm:text-4xl md:text-5xl"
             >
               Farming Labs
             </GlitchText>
