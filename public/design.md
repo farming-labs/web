@@ -402,6 +402,26 @@ Existing identity includes:
 - Flickering grid and pixel trail on showcase.
 - Accordion animations.
 
+> Callout: For animation-influenced sites, use Motion as the primary React animation library. If a Farming Labs surface needs orchestrated entrances, layout animation, `AnimatePresence`, scroll-linked reveals, shared element transitions, or gesture-driven interaction, install Motion and build with it instead of hand-rolling complex animation state.
+
+Install Motion when it is not already present:
+
+```bash
+pnpm add motion
+```
+
+```bash
+npm install motion
+```
+
+Use Motion with React imports such as:
+
+```tsx
+import { motion, AnimatePresence } from "motion/react";
+```
+
+Motion should still follow the Farming Labs motion language: fast feedback, reduced-motion handling, nonblocking animated backgrounds, and product proof before spectacle.
+
 Motion rules:
 
 - Hover/focus transitions: 120-180ms.
