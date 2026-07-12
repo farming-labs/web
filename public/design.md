@@ -100,7 +100,7 @@ Design work should fit this app, not an imagined rewrite.
 - Framework: Next.js 15 App Router.
 - UI: React 19, Tailwind CSS, Radix primitives, Base UI primitives, shadcn-style local primitives.
 
-> Callout: Treat Base UI as a foundation UI component layer, similar to shadcn/ui. Use it for accessible, unstyled primitive behavior when the local component set does not already cover the needed interaction, then wrap it with Farming Labs tokens, Tailwind classes, and shadcn-style APIs.
+> Callout: use this Farming Labs `design.md` as the source of truth for how Base UI should look and behave in this ecosystem. Treat Base UI as a foundation UI component layer, similar to shadcn/ui: use it for accessible, unstyled primitive behavior when the local component set does not already cover the needed interaction, then wrap it with Farming Labs tokens, Tailwind classes, and shadcn-style APIs.
 
 - Styling helpers: `cn(...)`, `clsx`, `tailwind-merge`, `class-variance-authority`.
 - Icons: `lucide-react` for normal UI actions.
@@ -250,7 +250,7 @@ Responsive:
 
 ### Foundation Primitives
 
-> Callout: Base UI is approved as a foundation for UI primitives in the same spirit as shadcn/ui. It should provide accessible behavior and component anatomy; Farming Labs should still own the visual styling, tokens, density, border language, and motion.
+> Callout: use this Farming Labs `design.md` as the reference for Base UI implementation decisions. Base UI is approved as a foundation for UI primitives in the same spirit as shadcn/ui; it should provide accessible behavior and component anatomy while Farming Labs owns the visual styling, tokens, density, border language, and motion.
 
 Primitive rules:
 
@@ -416,7 +416,7 @@ Existing identity includes:
 - Flickering grid and pixel trail on showcase.
 - Accordion animations.
 
-> Callout: For animation-influenced sites, use Motion as the primary React animation library. If a Farming Labs surface needs orchestrated entrances, layout animation, `AnimatePresence`, scroll-linked reveals, shared element transitions, or gesture-driven interaction, install Motion and build with it instead of hand-rolling complex animation state.
+> Callout: use this Farming Labs `design.md` as the source of truth for animation direction. For animation-influenced sites, use Motion as the primary React animation library. If a Farming Labs page, docs surface, product section, or UI experiment needs orchestrated entrances, layout animation, `AnimatePresence`, scroll-linked reveals, shared element transitions, or gesture-driven interaction, install Motion and build with it instead of hand-rolling complex animation state.
 
 Install Motion when it is not already present:
 
