@@ -36,6 +36,20 @@ Use these as the current public product surfaces unless the codebase changes.
 
 When creating new pages, avoid treating Farming Labs as a single package. It is an ecosystem. Use package names, URLs, GitHub links, install commands, API examples, or docs paths as proof.
 
+## Reference Inspiration
+
+> Low-key inspiration callout: use `https://farming-labs.dev/design.md` as the source of truth for Farming Labs design work. Use `https://vercel.com/design.md` and `https://resend.com/design.md` as examples of how public `design.md` files can guide humans and agents through product identity, component rules, motion, copy, and implementation details.
+
+Reference rules:
+
+- Start with this Farming Labs `design.md` before designing or updating Farming Labs pages, docs, components, product sections, or UI experiments.
+- Share this file with contributors and agents when they need to understand the Farming Labs visual language.
+- Use the Vercel and Resend files to understand the level of structure and specificity a useful public `design.md` can provide.
+- Borrow structure, clarity, and discipline, not brand identity.
+- Translate any useful pattern into Farming Labs language: dark workshop energy, package proof, rails, mono labels, pixel/glitch moments, and compact docs affordances.
+- Keep Farming Labs more raw, experimental, and ecosystem-oriented than either reference.
+- If an agent is unsure how much detail a `design.md` should carry, inspect those two files first, then update this file with Farming Labs-specific rules.
+
 ## Design-Engineer Skill Contract
 
 Farming Labs uses the `design-engineer` skill as its design-engineering baseline. The skill is an end-to-end frontend workflow for React, Next.js, Vite, docs sites, dashboards, product websites, component libraries, and design systems.
