@@ -84,7 +84,10 @@ Distilled rules from the skill:
 Design work should fit this app, not an imagined rewrite.
 
 - Framework: Next.js 15 App Router.
-- UI: React 19, Tailwind CSS, Radix primitives, shadcn-style local primitives.
+- UI: React 19, Tailwind CSS, Radix primitives, Base UI primitives, shadcn-style local primitives.
+
+> Callout: Treat Base UI as a foundation UI component layer, similar to shadcn/ui. Use it for accessible, unstyled primitive behavior when the local component set does not already cover the needed interaction, then wrap it with Farming Labs tokens, Tailwind classes, and shadcn-style APIs.
+
 - Styling helpers: `cn(...)`, `clsx`, `tailwind-merge`, `class-variance-authority`.
 - Icons: `lucide-react` for normal UI actions.
 - Motion: CSS/Tailwind keyframes and `motion`.
@@ -230,6 +233,18 @@ Responsive:
 - Use stable dimensions for toolbars, buttons, counters, and repeated cards.
 
 ## Component Guidance
+
+### Foundation Primitives
+
+> Callout: Base UI is approved as a foundation for UI primitives in the same spirit as shadcn/ui. It should provide accessible behavior and component anatomy; Farming Labs should still own the visual styling, tokens, density, border language, and motion.
+
+Primitive rules:
+
+- Prefer existing local primitives in `components/ui/*` first.
+- Use Base UI when adding a missing accessible primitive or replacing hand-rolled behavior.
+- Keep new wrappers consistent with local shadcn-style APIs: small components, native props, `cn(...)`, variants where useful, and predictable `data-*` state hooks.
+- Do not import a Base UI surface as a finished visual design. Apply Farming Labs structure: rails, borders, mono labels, compact spacing, and restrained motion.
+- Avoid mixing multiple primitive libraries for the same interaction unless there is a clear reason.
 
 ### Buttons
 
