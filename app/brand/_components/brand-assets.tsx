@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Download } from "lucide-react";
 
+import { CopyAssetButton } from "./copy-asset-button";
+
 type DownloadAsset = {
   format: "SVG" | "PNG";
   href: string;
@@ -107,9 +109,16 @@ export function AssetPanel({
         <span className="min-w-0 truncate font-code text-[11px] tracking-normal text-white/55">
           {downloads[0]?.href.replace("/brand/", "")}
         </span>
-        <div className="flex shrink-0 gap-2">
+        <div className="flex flex-wrap gap-2 sm:justify-end">
           {downloads.map((asset) => (
-            <DownloadLink asset={asset} compact key={asset.href} />
+            <div className="inline-flex shrink-0" key={asset.href}>
+              <DownloadLink asset={asset} compact />
+              <CopyAssetButton
+                format={asset.format}
+                href={asset.href}
+                label={asset.label}
+              />
+            </div>
           ))}
         </div>
       </div>
