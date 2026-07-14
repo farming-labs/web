@@ -206,6 +206,15 @@ export function HeroTypewriter() {
             >
               email
             </a>
+            <span className="text-zinc-600/80" aria-hidden>
+              ·
+            </span>
+            <a
+              href={'/brand'}
+              className="transition-colors hover:text-zinc-100"
+            >
+             brand 
+            </a>
           </span>
         </div>
       </div>
