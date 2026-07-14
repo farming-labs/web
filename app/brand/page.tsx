@@ -149,11 +149,11 @@ export default function BrandPage() {
               width={161}
             />
             <span className="font-code text-[11px] uppercase tracking-[0.02em] text-white/72 transition-colors duration-150 group-hover:text-white">
-              Farming Labs
+              Farming-Labs
             </span>
           </Link>
           <span className="font-code text-[10px] uppercase tracking-[0.02em] text-white/38">
-            Brand / 2026
+            Brand 
           </span>
         </header>
 
