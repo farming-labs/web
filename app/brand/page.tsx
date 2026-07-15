@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   title: "Brand Assets | Farming Labs",
   description:
     "Download the official Farming Labs logo, wordmark, banner, and avatar assets.",
+  openGraph: {
+    images: [],
+  },
+  twitter: {
+    images: [],
+  },
 };
 
 const logoDownloads = {
