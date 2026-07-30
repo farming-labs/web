@@ -1,0 +1,82 @@
+---
+title: Customize
+description: This guide provides instructions on customizing our application.
+---
+
+## Markdown Options
+
+To customize Markdown parsing, navigate to `src/lib/markdown.ts` and locate the `parseMdx` function. Add your desired plugins to the `evaluate` options:
+
+```ts:src/lib/markdown.ts
+async function parseMdx<Frontmatter>(rawMdx: string) {
+    const { content, data } = matter(rawMdx);
+    const module = await evaluate(content, {
+        ...runtime,
+        rehypePlugins: [rehypePrism],
+        remarkPlugins: [remarkGfm],
+    });
+
+    return {
+        content: createElement(module.default, { components }),
+        frontmatter: data as Frontmatter,
+    };
+}
+```
+
+## Fonts
+
+This project self-hosts its fonts with Fontsource. To use another font, install its package and import it from the root layout.
+
+### Google Fonts
+
+Install the Fontsource package for the Google font:
+
+```bash
+pnpm add @fontsource-variable/space-grotesk
+```
+
+Then import it from `src/app/layout.tsx`:
+
+```tsx:src/app/layout.tsx
+import "@fontsource-variable/space-grotesk";
+
+export default function RootLayout({ children }) {
+    return (
+        <html lang="en">
+            <body className="font-regular">{children}</body>
+        </html>
+    );
+}
+```
+
+### Local Fonts
+
+Place the font under `public/fonts`, declare it in `src/app/globals.css`, and use the CSS variable in Tailwind:
+
+```css:src/app/globals.css
+@font-face {
+    font-family: "Farming Sans";
+    src: url("/fonts/farming-sans.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 100 900;
+}
+
+:root {
+    --font-regular: "Farming Sans";
+}
+```
+
+Ensure the variable is configured in `tailwind.config.ts`:
+
+```ts:tailwind.config.ts
+{
+    // ...
+    extend: {
+        fontFamily: {
+            regular: ["var(--font-regular)"],
+        },
+    }
+}
+```
+
+For theme and colors, refer to the [Theme section](/docs/getting-started/themes)
